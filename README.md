@@ -6,3 +6,5 @@ Noah Shields woooooooo
 はじめまして。わたしはカシア・ビーバーです。どうぞよろしくおねがいします。
 
 das ist ein eimer
+
+You just lost the game.
