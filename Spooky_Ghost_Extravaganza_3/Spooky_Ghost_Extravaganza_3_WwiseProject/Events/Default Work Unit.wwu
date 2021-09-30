@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{73223648-A3C2-43C0-B70B-C39C4931BA76}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{73223648-A3C2-43C0-B70B-C39C4931BA76}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="crab_event" ID="{F047F3C9-4445-42EA-80B7-A7A97975B4E7}">
+					<ChildrenList>
+						<Action Name="" ID="{A6A5D4B5-1824-4FAC-BAB6-41388AAC1794}" ShortID="725028806">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="crabRave" ID="{0ED4CE29-DDAF-4521-88CA-80576DDDCB29}" WorkUnitID="{B864A975-37CB-419E-97C6-0F87799029EF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

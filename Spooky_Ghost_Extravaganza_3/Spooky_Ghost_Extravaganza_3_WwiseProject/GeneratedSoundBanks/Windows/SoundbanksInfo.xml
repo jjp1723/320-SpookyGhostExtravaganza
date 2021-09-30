@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Brian\Documents\GitHub\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Brian\Documents\GitHub\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Brian\Documents\GitHub\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Brian\Documents\GitHub\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="460270446" Language="SFX" Hash="3393242397">
+			<ObjectPath>\SoundBanks\Default Work Unit\GameSoundBank</ObjectPath>
+			<ShortName>GameSoundBank</ShortName>
+			<Path>GameSoundBank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="288084930" Name="crab_event" ObjectPath="\Events\Default Work Unit\crab_event" DurationType="OneShot" DurationMin="192.284439" DurationMax="192.284439">
+					<IncludedMemoryFiles>
+						<File Id="258354525" Language="SFX">
+							<ShortName>crabRave.wav</ShortName>
+							<Path>SFX\crabRave_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="446984183">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	288084930	crab_event			\Default Work Unit\crab_event	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	258354525	crabRave	C:\Users\Brian\Documents\GitHub\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3\Spooky_Ghost_Extravaganza_3_WwiseProject\.cache\Windows\SFX\crabRave_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\crabRave		8479808
+
