@@ -38,4 +38,15 @@ public class NpcController : MonoBehaviour
             moveDir.y *= -1;
         }
     }
+
+    public void SetScared(bool isScared)
+    {
+        if (isScared) {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+        }
+    }
 }

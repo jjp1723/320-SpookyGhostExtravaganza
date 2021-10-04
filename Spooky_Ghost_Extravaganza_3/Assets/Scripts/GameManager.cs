@@ -35,12 +35,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerController.CheckForPlayerInput();
+        playerController.CheckForMovementInput();
+
         powerupController.CheckForInput();
 
         for (int i = 0; i < npcs.Count; i++)
         {
             npcControllers[i].Move();
         }
+
+        playerController.CheckForScareInput(npcs);
     }
 }
