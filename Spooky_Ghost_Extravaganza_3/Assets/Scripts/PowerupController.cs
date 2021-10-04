@@ -12,12 +12,6 @@ public class PowerupController : MonoBehaviour
         powerup = gameObject;   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void CheckForInput()
     {
         //test that position works
