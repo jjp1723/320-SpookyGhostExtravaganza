@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed = 1.0f;
     [SerializeField]
     private float scareRadius = 5.0f;
+    private Rigidbody2D rb;
 
     [SerializeField]
     private GameObject scareEffect;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         player = gameObject;
+        rb = player.GetComponent<Rigidbody2D>();
     }
 
     public void CheckForMovementInput()
@@ -28,17 +30,21 @@ public class PlayerController : MonoBehaviour
         {
             MovePlayer(new Vector2(0.0f, moveSpeed));
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             MovePlayer(new Vector2(0.0f, -moveSpeed));
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             MovePlayer(new Vector2(-moveSpeed, 0.0f));
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             MovePlayer(new Vector2(moveSpeed, 0.0f));
+        }
+        else
+        {
+            StopPlayer();
         }
 
         //update scare timer
@@ -79,9 +85,14 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
+    public void StopPlayer()
+    {
+        rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+    }
+    
     private void MovePlayer(Vector2 distToMove)
     {
-        player.transform.position += (Vector3) distToMove * Time.deltaTime;
+        rb.velocity = (Vector3) distToMove;
     }
 
     private void ScareNPC(GameObject npc)
