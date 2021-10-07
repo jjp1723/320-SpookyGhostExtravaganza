@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         //update scare timer
         if (scaredTimer >= 0.0f)
         {
-            if (scaredTimer >= 1.25f && circle != null)
+            if (scaredTimer <= 1.25f && circle != null)
             {
                 Destroy(circle);
             }
