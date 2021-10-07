@@ -8,6 +8,11 @@ public class NpcController : MonoBehaviour
 
     private Vector2 moveDir;
 
+    private bool isScared = false;
+    public bool IsScared { get => isScared; set => UpdateScared(value); }
+
+    private float scaredTimer = 2.0f;
+
     void Start()
     {
         npc = gameObject;
@@ -39,14 +44,25 @@ public class NpcController : MonoBehaviour
         }
     }
 
-    public void SetScared(bool isScared)
+    public void UpdateScared(bool isScared)
     {
-        if (isScared) {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        if (this.isScared && scaredTimer >= 0.0f)
+        {
+            scaredTimer -= Time.deltaTime;
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+            this.isScared = isScared;
+
+            if (isScared)
+            {
+                scaredTimer = 2.0f;
+                gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+            }
         }
     }
 }

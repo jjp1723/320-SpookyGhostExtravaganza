@@ -46,8 +46,15 @@ public class PlayerController : MonoBehaviour
                 //Squaring the radius to avoid a square root
                 if (Mathf.Pow(scareRadius, 2) > distSquared)
                 {
-                    npcs[i].GetComponent<NpcController>().SetScared(true);
+                    npcs[i].GetComponent<NpcController>().UpdateScared(true);
                 }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < npcs.Count; i++)
+            {
+                npcs[i].GetComponent<NpcController>().UpdateScared(false);
             }
         }
     }
