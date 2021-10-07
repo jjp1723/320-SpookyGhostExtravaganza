@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float scareRadius = 5.0f;
 
+    [SerializeField]
+    private GameObject scareEffect;
+    Object circle;
+
+    //cooldown
+    private float scaredTimer = 0.0f;
+
     void Start()
     {
         player = gameObject;
@@ -33,12 +40,25 @@ public class PlayerController : MonoBehaviour
         {
             MovePlayer(new Vector2(moveSpeed, 0.0f));
         }
+
+        //update scare timer
+        if (scaredTimer >= 0.0f)
+        {
+            if (scaredTimer >= 1.25f && circle != null)
+            {
+                Destroy(circle);
+            }
+            scaredTimer -= Time.deltaTime;
+        }
     }
 
     public void CheckForScareInput(List<GameObject> npcs)
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && scaredTimer <= 0.0f)
         {
+            scaredTimer = 2.0f;
+
+            circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
             for (int i = 0; i < npcs.Count; i++)
             {
                 float distSquared = Mathf.Pow(npcs[i].transform.position.x - player.transform.position.x, 2) + Mathf.Pow(npcs[i].transform.position.y - player.transform.position.y, 2);
