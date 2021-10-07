@@ -42,6 +42,8 @@ public class NpcController : MonoBehaviour
         {
             moveDir.y *= -1;
         }
+
+        UpdateScared(false);
     }
 
     public void UpdateScared(bool isScared)
@@ -63,6 +65,16 @@ public class NpcController : MonoBehaviour
             {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
             }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name == "ScareEffect(Clone)")
+        {
+            Debug.Log("Scared");
+            UpdateScared(true);
         }
     }
 }

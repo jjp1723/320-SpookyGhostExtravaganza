@@ -59,24 +59,24 @@ public class PlayerController : MonoBehaviour
             scaredTimer = 2.0f;
 
             circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
-            for (int i = 0; i < npcs.Count; i++)
-            {
-                float distSquared = Mathf.Pow(npcs[i].transform.position.x - player.transform.position.x, 2) + Mathf.Pow(npcs[i].transform.position.y - player.transform.position.y, 2);
+            //for (int i = 0; i < npcs.Count; i++)
+            //{
+            //    float distSquared = Mathf.Pow(npcs[i].transform.position.x - player.transform.position.x, 2) + Mathf.Pow(npcs[i].transform.position.y - player.transform.position.y, 2);
 
-                //Squaring the radius to avoid a square root
-                if (Mathf.Pow(scareRadius, 2) > distSquared)
-                {
-                    npcs[i].GetComponent<NpcController>().UpdateScared(true);
-                }
-            }
+            //    //Squaring the radius to avoid a square root
+            //    if (Mathf.Pow(scareRadius, 2) > distSquared)
+            //    {
+            //        npcs[i].GetComponent<NpcController>().UpdateScared(true);
+            //    }
+            //}
         }
-        else
-        {
-            for (int i = 0; i < npcs.Count; i++)
-            {
-                npcs[i].GetComponent<NpcController>().UpdateScared(false);
-            }
-        }
+        //else
+        //{
+        //    for (int i = 0; i < npcs.Count; i++)
+        //    {
+        //        npcs[i].GetComponent<NpcController>().UpdateScared(false);
+        //    }
+        //}
     }
 
     private void MovePlayer(Vector2 distToMove)
