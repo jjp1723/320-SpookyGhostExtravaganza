@@ -26,25 +26,48 @@ public class PlayerController : MonoBehaviour
 
     public void CheckForMovementInput()
     {
+        bool keyPressed = false;
+        Vector2 velocityVec = new Vector2(0.0f, 0.0f);
+
         if (Input.GetKey(KeyCode.W))
         {
-            MovePlayer(new Vector2(0.0f, moveSpeed));
+            velocityVec.y  += moveSpeed;
+            keyPressed = true;
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            MovePlayer(new Vector2(0.0f, -moveSpeed));
+            velocityVec.y -= moveSpeed;
+            keyPressed = true;
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            MovePlayer(new Vector2(-moveSpeed, 0.0f));
+            velocityVec.x -= moveSpeed;
+            keyPressed = true;
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            MovePlayer(new Vector2(moveSpeed, 0.0f));
+            velocityVec.x += moveSpeed;
+            keyPressed = true;
+        }
+
+        if(!keyPressed)
+        {
+            StopPlayer();
         }
         else
         {
-            StopPlayer();
+            if (velocityVec.x != 0 && velocityVec.y != 0)
+            {
+                if (rb.velocity.y != 0.0f)
+                {
+                    velocityVec.x = 0.0f;
+                }
+                else
+                {
+                    velocityVec.y = 0.0f;
+                }
+            }
+            MovePlayer(velocityVec);
         }
 
         //update scare timer
