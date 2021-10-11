@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private GameObject scareEffect;
     Object circle;
 
+    public AudioManager gameAudio;
+
     //cooldown
     private float scaredTimer = 0.0f;
 
@@ -98,6 +100,9 @@ public class PlayerController : MonoBehaviour
             //        npcs[i].GetComponent<NpcController>().UpdateScared(true);
             //    }
             //}
+
+            //Audio "BOO!"
+            gameAudio.Play("Ghost");
         }
         //else
         //{

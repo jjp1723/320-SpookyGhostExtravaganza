@@ -5,11 +5,12 @@ using UnityEngine;
 public class PowerupController : MonoBehaviour
 {
     private GameObject powerup;
+    public AudioManager gameAudio;
 
     // Start is called before the first frame update
     void Start()
     {
-        powerup = gameObject;   
+        powerup = gameObject;
     }
 
     public void CheckForInput()
@@ -36,6 +37,9 @@ public class PowerupController : MonoBehaviour
     {
         if(collision.gameObject.name == "Player")
         {
+            //Audio
+            gameAudio.Play("Powerup");
+
             Debug.Log("Picked up Power up!");
             Destroy(powerup);
         }
