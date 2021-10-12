@@ -58,17 +58,17 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (velocityVec.x != 0 && velocityVec.y != 0)
-            {
-                if (rb.velocity.y != 0.0f)
-                {
-                    velocityVec.x = 0.0f;
-                }
-                else
-                {
-                    velocityVec.y = 0.0f;
-                }
-            }
+            //if (velocityVec.x != 0 && velocityVec.y != 0)
+            //{
+            //    if (rb.velocity.y != 0.0f)
+            //    {
+            //        velocityVec.x = 0.0f;
+            //    }
+            //    else
+            //    {
+            //        velocityVec.y = 0.0f;
+            //    }
+            //}
             MovePlayer(velocityVec);
         }
 
