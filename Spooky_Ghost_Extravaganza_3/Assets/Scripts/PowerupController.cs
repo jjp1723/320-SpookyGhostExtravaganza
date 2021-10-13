@@ -7,6 +7,8 @@ public class PowerupController : MonoBehaviour
     private GameObject powerup;
     public AudioManager gameAudio;
 
+    public string type;
+
     // Start is called before the first frame update
     void Start()
     {

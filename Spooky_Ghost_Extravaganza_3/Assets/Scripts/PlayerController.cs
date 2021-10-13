@@ -89,6 +89,9 @@ public class PlayerController : MonoBehaviour
         {
             scaredTimer = 2.0f;
 
+            //set radius to be scareRadius
+            scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
+
             circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
             //for (int i = 0; i < npcs.Count; i++)
             //{
@@ -126,5 +129,14 @@ public class PlayerController : MonoBehaviour
     private void ScareNPC(GameObject npc)
     {
         Debug.Log("Scare Key");
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //increase scare radius
+        if (collision.gameObject.name == "Megaphone")
+        {
+            scareRadius = 8.0f;
+        }
     }
 }
