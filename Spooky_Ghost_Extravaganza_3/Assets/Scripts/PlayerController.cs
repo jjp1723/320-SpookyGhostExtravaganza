@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     {
         player = gameObject;
         rb = player.GetComponent<Rigidbody2D>();
-        scareEffect.GetComponent<Transform>().localScale = new Vector3(scareRadius, scareRadius, 1.0f);
     }
 
     public void CheckForMovementInput()
