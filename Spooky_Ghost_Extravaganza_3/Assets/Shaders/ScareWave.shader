@@ -31,7 +31,7 @@ Shader "Unlit/ScareWave"
                 float2 uvsCentered = uv * 2 - 1;
                 float radialDistance = length(uvsCentered);
 
-                float wave = cos( (radialDistance - _Time.y * 0.1) * TAU * 5) * 0.5 + 0.5;
+                float wave = cos( (radialDistance - _Time.y * 0.5) * TAU * 5) * 0.5 + 0.5;
                 wave *= 1 - radialDistance;
 
                 return wave;

@@ -769,7 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2110854824}
   - component: {fileID: 2110854825}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: ScareCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
