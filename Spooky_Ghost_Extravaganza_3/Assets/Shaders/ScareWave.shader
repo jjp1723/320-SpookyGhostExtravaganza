@@ -7,7 +7,7 @@ Shader "Unlit/ScareWave"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags { "RenderType"="Additive" }
         //LOD 100
 
         Pass
@@ -18,7 +18,24 @@ Shader "Unlit/ScareWave"
 
             #include "UnityCG.cginc"
 
-            struct appdata
+            #define TAU 6.2831853071
+            float _Radius;
+
+            sampler2D _MainTex;
+            float4 _MainTex_ST;
+
+            float getWave( float2 uv)
+            {
+                float2 uvsCentered = uv * 2 - 1;
+                float radialDistance = length(uvsCentered);
+
+                float wave = cos( (radialDistance - _Time.y * 0.1) * TAU * 5) * 0.5 + 0.5;
+                wave *= 1 - radialDistance;
+
+                return wave;
+            }
+
+            struct MeshData
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
@@ -30,10 +47,7 @@ Shader "Unlit/ScareWave"
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
-
-            v2f vert (appdata v)
+            v2f vert (MeshData v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
@@ -43,9 +57,8 @@ Shader "Unlit/ScareWave"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                return col;
+                float wave = getWave( i.uv );
+                return float4(wave, wave, wave, wave);
             }
             ENDCG
         }
