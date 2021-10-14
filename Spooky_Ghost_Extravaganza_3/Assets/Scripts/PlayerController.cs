@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float scareRadius = 5.0f;
     private Rigidbody2D rb;
 
+    private BoxCollider2D boxCollider;
+
     [SerializeField]
     private GameObject scareEffect;
     Object circle;
@@ -20,10 +22,14 @@ public class PlayerController : MonoBehaviour
     //cooldown
     private float scaredTimer = 0.0f;
 
+    //powerup variables
+    private int broomUse = 0;
+
     void Start()
     {
         player = gameObject;
         rb = player.GetComponent<Rigidbody2D>();
+        boxCollider = player.GetComponent<BoxCollider2D>();
     }
 
     public void CheckForMovementInput()
@@ -137,6 +143,39 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "Megaphone")
         {
             scareRadius = 10.0f;
+        }
+
+        if(collision.gameObject.name == "Broom")
+        {
+            broomUse = 3;
+        }
+
+        if(collision.gameObject.name == "Obstacle")
+        {
+            Debug.Log("Hit Obstacle");
+            if (broomUse > 0)
+            {
+                boxCollider.isTrigger = true;
+            }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.name == "Obstacle")
+        {
+            broomUse--;
+            boxCollider.isTrigger = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if(collider.gameObject.name == "Obstacle")
+        {
+
+            broomUse--;
+            boxCollider.isTrigger = false;
         }
     }
 }
