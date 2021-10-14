@@ -71,7 +71,7 @@ public class NpcController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name == "ScareEffect(Clone)")
+        if (collision.gameObject.name == "ScareCircle(Clone)")
         {
             Debug.Log("Scared");
             UpdateScared(true);
