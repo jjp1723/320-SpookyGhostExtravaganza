@@ -7,11 +7,13 @@ Shader "Unlit/ScareWave"
     }
     SubShader
     {
-        Tags { "RenderType"="Additive" }
+        Tags { "RenderType"="Opaque" }
         //LOD 100
 
         Pass
         {
+            Blend one one //additive
+
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
