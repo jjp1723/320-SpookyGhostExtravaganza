@@ -5,6 +5,8 @@ using UnityEngine;
 public class NpcController : MonoBehaviour
 {
     private GameObject npc;
+    [SerializeField]
+    private GameObject npcDrop;
 
     private Vector2 moveDir;
 
@@ -75,6 +77,12 @@ public class NpcController : MonoBehaviour
         {
             Debug.Log("Scared");
             UpdateScared(true);
+
+            GameObject drop = Instantiate(npcDrop);
+            drop.transform.position = npc.transform.position;
+
+            float randNum = Random.Range(0.0f, 1.0f);
+            drop.GetComponent<Rigidbody2D>().velocity = 3 * new Vector3(randNum, 1.0f - randNum);
         }
     }
 }
