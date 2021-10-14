@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         player = gameObject;
         rb = player.GetComponent<Rigidbody2D>();
+        scareEffect.GetComponent<Transform>().localScale = new Vector3(scareRadius, scareRadius, 1.0f);
     }
 
     public void CheckForMovementInput()
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
             //set radius to be scareRadius
             scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
 
-            circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
+            circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
             //for (int i = 0; i < npcs.Count; i++)
             //{
             //    float distSquared = Mathf.Pow(npcs[i].transform.position.x - player.transform.position.x, 2) + Mathf.Pow(npcs[i].transform.position.y - player.transform.position.y, 2);
