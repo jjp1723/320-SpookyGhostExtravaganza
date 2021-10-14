@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
         //increase scare radius
         if (collision.gameObject.name == "Megaphone")
         {
-            scareRadius = 8.0f;
+            scareRadius = 10.0f;
         }
     }
 }
