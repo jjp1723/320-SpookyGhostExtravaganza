@@ -866,8 +866,20 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Broom
+    clip: {fileID: 8300000, guid: 26ea292a7c1ba82439210f7edd5c0fcc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: Ghost
     clip: {fileID: 8300000, guid: 41bbc998b500e3445a15d481bb88462e, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Pickup1
+    clip: {fileID: 8300000, guid: c3de5e97f7f5d674eb8f2a08d2bd04d1, type: 3}
     volume: 1
     pitch: 1
     loop: 0

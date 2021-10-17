@@ -156,6 +156,8 @@ public class PlayerController : MonoBehaviour
             if (broomUse > 0)
             {
                 boxCollider.isTrigger = true;
+                //Audio
+                gameAudio.Play("Broom");
             }
         }
     }

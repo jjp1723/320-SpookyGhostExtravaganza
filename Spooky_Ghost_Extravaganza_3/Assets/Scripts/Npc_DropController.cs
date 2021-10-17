@@ -20,7 +20,9 @@ public class Npc_DropController : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             //Audio
-            //gameAudio.Play("Powerup");
+            //(Since it's a prefab, the manager can't directly be connected, so we use FindObject. It's just slower.)
+            FindObjectOfType<AudioManager>().Play("Pickup1");
+            //gameAudio.Play("Pickup1");
             Destroy(npcDrop);
         }
     }
