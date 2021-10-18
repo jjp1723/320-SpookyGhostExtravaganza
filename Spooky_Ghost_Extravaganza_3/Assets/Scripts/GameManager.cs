@@ -41,7 +41,10 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < npcs.Count; i++)
         {
-            npcControllers[i].Move();
+            if (npcControllers[i])
+            {
+                npcControllers[i].Move();
+            }
         }
 
         playerController.CheckForScareInput(npcs);
