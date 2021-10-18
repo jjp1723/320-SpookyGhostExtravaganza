@@ -135,4 +135,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameAudio: {fileID: 0}
+  pointsManager: {fileID: 5990860730093600726, guid: c97a4ca1b19f804459517d8f67ac292b, type: 3}
   type: 

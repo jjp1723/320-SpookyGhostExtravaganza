@@ -7,12 +7,16 @@ public class PowerupController : MonoBehaviour
     private GameObject powerup;
     public AudioManager gameAudio;
 
+    private GameObject pointsManager;
+    private const int powerUpPointVal = 500;
+
     public string type;
 
     // Start is called before the first frame update
     void Start()
     {
         powerup = gameObject;
+        pointsManager = GameObject.Find("PointsManager");
     }
 
     public void CheckForInput()
@@ -41,6 +45,8 @@ public class PowerupController : MonoBehaviour
         {
             //Audio
             gameAudio.Play("Powerup");
+
+            pointsManager.GetComponent<PointsManager>().AddPointsToPlayer(collision.gameObject.name, powerUpPointVal);
 
             Debug.Log("Picked up Power up!");
             Destroy(powerup);
