@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameAudio: {fileID: 1998387991}
-  type: 
+  type: broom
 --- !u!212 &662599124
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameAudio: {fileID: 1998387991}
-  type: 
+  type: megaphone
 --- !u!212 &1060067613
 SpriteRenderer:
   m_ObjectHideFlags: 0
