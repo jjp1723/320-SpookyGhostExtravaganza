@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PointsManager : MonoBehaviour
 {
     private GameObject pointsManager;
+    private Text p1ScoreText;
 
     //Stores all of the players scores
     private Dictionary<string, int> playerScores;
@@ -14,6 +16,7 @@ public class PointsManager : MonoBehaviour
     {
         pointsManager = gameObject;
         playerScores = new Dictionary<string, int>();
+        p1ScoreText = GameObject.Find("ScoreTextP1").GetComponent<Text>();
     }
 
     public void AddPointsToPlayer(string playerID, int pointsToAdd)
@@ -27,7 +30,7 @@ public class PointsManager : MonoBehaviour
             playerScores.Add(playerID, pointsToAdd);
         }
 
-        Debug.Log(playerID + ": " + playerScores[playerID]);
+        p1ScoreText.text = "Score: " + playerScores[playerID];
     }
 
 }
