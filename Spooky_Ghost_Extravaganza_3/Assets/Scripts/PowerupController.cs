@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerupController : MonoBehaviour
 {
     private GameObject powerup;
-    public AudioManager gameAudio;
+    private AudioManager gameAudio;
 
     private GameObject pointsManager;
     private const int powerUpPointVal = 500;
@@ -15,6 +15,7 @@ public class PowerupController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameAudio = FindObjectOfType<AudioManager>();
         powerup = gameObject;
         pointsManager = GameObject.Find("PointsManager");
     }

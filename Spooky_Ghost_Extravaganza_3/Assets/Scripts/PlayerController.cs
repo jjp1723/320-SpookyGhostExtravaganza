@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private GameObject scareEffect;
     Object circle;
 
-    public AudioManager gameAudio;
+    private AudioManager gameAudio;
 
     //cooldown
     private float scaredTimer = 0.0f;
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        gameAudio = FindObjectOfType<AudioManager>();
         player = gameObject;
         rb = player.GetComponent<Rigidbody2D>();
         boxCollider = player.GetComponent<BoxCollider2D>();

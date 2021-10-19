@@ -5,7 +5,7 @@ using UnityEngine;
 public class Npc_DropController : MonoBehaviour
 {
     private GameObject npcDrop;
-    public AudioManager gameAudio;
+    private AudioManager gameAudio;
 
     private GameObject pointsManager;
     private const int candyPointsVal = 100;
@@ -15,6 +15,7 @@ public class Npc_DropController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameAudio = FindObjectOfType<AudioManager>();
         npcDrop = gameObject;
         pointsManager = GameObject.Find("PointsManager");
     }
@@ -24,7 +25,6 @@ public class Npc_DropController : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             //Audio
-            //(Since it's a prefab, the manager can't directly be connected, so we use FindObject. It's just slower.)
             FindObjectOfType<AudioManager>().Play("Pickup1");
 
             pointsManager.GetComponent<PointsManager>().AddPointsToPlayer(collision.gameObject.name, candyPointsVal);
