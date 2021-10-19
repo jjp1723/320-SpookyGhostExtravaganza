@@ -139,15 +139,19 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //increase scare radius
-        if (collision.gameObject.name == "Megaphone")
+        PowerupController powerup = collision.gameObject.GetComponent<PowerupController>();
+        if (powerup)
         {
-            scareRadius = 10.0f;
-        }
+            //increase scare radius
+            if (powerup.type == "Megaphone")
+            {
+                scareRadius = 10.0f;
+            }
 
-        if(collision.gameObject.name == "Broom")
-        {
-            broomUse = 3;
+            if (powerup.type == "Broom")
+            {
+                broomUse = 3;
+            }
         }
 
         if(collision.gameObject.tag == "Obstacle")
