@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NpcController : MonoBehaviour
 {
-    private GameObject npc;
     [SerializeField]
     private GameObject npcDrop;
 
@@ -17,8 +16,7 @@ public class NpcController : MonoBehaviour
 
     void Start()
     {
-        npc = gameObject;
-        npc.transform.position = new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
+        transform.position = new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
 
         //set moveDir to random direction
         moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
@@ -26,8 +24,8 @@ public class NpcController : MonoBehaviour
 
     public void Move()
     {
-        Vector3 pos = npc.transform.position;
-        npc.transform.position += (Vector3)moveDir * Time.deltaTime;
+        Vector3 pos = transform.position;
+        transform.position += (Vector3)moveDir * Time.deltaTime;
         if (pos.x > 5f && moveDir.x > 0)
         {
             moveDir.x *= -1;
@@ -75,14 +73,17 @@ public class NpcController : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "ScareCircle(Clone)")
         {
+            if (!isScared)
+            {
+                GameObject drop = Instantiate(npcDrop);
+                drop.transform.position = transform.position;
+
+                float randNum = Random.Range(0.0f, 1.0f);
+                drop.GetComponent<Rigidbody2D>().velocity = 3 * new Vector3(randNum, 1.0f - randNum);
+            }
+
             Debug.Log("Scared");
             UpdateScared(true);
-
-            GameObject drop = Instantiate(npcDrop);
-            drop.transform.position = npc.transform.position;
-
-            float randNum = Random.Range(0.0f, 1.0f);
-            drop.GetComponent<Rigidbody2D>().velocity = 3 * new Vector3(randNum, 1.0f - randNum);
         }
     }
 }

@@ -140,18 +140,22 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //increase scare radius
-        if (collision.gameObject.name == "Megaphone")
+        PowerupController powerup = collision.gameObject.GetComponent<PowerupController>();
+        if (powerup)
         {
-            scareRadius = 10.0f;
+            //increase scare radius
+            if (powerup.type == "Megaphone")
+            {
+                scareRadius = 10.0f;
+            }
+
+            if (powerup.type == "Broom")
+            {
+                broomUse = 3;
+            }
         }
 
-        if(collision.gameObject.name == "Broom")
-        {
-            broomUse = 3;
-        }
-
-        if(collision.gameObject.name == "Obstacle")
+        if(collision.gameObject.tag == "Obstacle")
         {
             Debug.Log("Hit Obstacle");
             if (broomUse > 0)
@@ -163,18 +167,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.name == "Obstacle")
-        {
-            broomUse--;
-            boxCollider.isTrigger = false;
-        }
-    }
+    //void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if(collision.gameObject.name == "Obstacle")
+    //    {
+    //        broomUse--;
+    //        boxCollider.isTrigger = false;
+    //    }
+    //}
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if(collider.gameObject.name == "Obstacle")
+        if(collider.gameObject.tag == "Obstacle")
         {
 
             broomUse--;
