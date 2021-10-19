@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
             broomUse = 3;
         }
 
-        if(collision.gameObject.name == "Obstacle")
+        if(collision.gameObject.tag == "Obstacle")
         {
             Debug.Log("Hit Obstacle");
             if (broomUse > 0)
@@ -162,18 +162,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.name == "Obstacle")
-        {
-            broomUse--;
-            boxCollider.isTrigger = false;
-        }
-    }
+    //void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if(collision.gameObject.name == "Obstacle")
+    //    {
+    //        broomUse--;
+    //        boxCollider.isTrigger = false;
+    //    }
+    //}
 
     void OnTriggerExit2D(Collider2D collider)
     {
-        if(collider.gameObject.name == "Obstacle")
+        if(collider.gameObject.tag == "Obstacle")
         {
 
             broomUse--;
