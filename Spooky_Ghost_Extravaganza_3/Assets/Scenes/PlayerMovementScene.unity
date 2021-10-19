@@ -268,7 +268,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 064a445a277401a47bebb68aa1c7d2a0, type: 3}
   m_Color: {r: 1, g: 0.68454075, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -754,6 +754,7 @@ MonoBehaviour:
   moveSpeed: 5
   scareRadius: 5
   scareEffect: {fileID: 8825391213821587257, guid: 4dfe3906e452bb24e8a661dae05e5412, type: 3}
+  broomPrefab: {fileID: 6235325817092321800, guid: d1669efdf0ca7e54f8cbe1173f2de199, type: 3}
 --- !u!212 &1757603383
 SpriteRenderer:
   m_ObjectHideFlags: 0

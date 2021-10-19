@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     private GameObject scareEffect;
     Object circle;
 
+    [SerializeField]
+    private GameObject broomPrefab;
+    GameObject broomInstance;
+    Broomstick broomComponent;
+
     private AudioManager gameAudio;
 
     //cooldown
@@ -152,6 +157,10 @@ public class PlayerController : MonoBehaviour
             if (powerup.type == "Broom")
             {
                 broomUse = 3;
+                broomInstance = Object.Instantiate(broomPrefab, player.transform.position, Quaternion.identity, transform);
+                broomInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 40.31f);
+                broomInstance.transform.position += new Vector3(0.07f, -0.3f, 0.0f);
+                broomComponent = broomInstance.GetComponent<Broomstick>();
             }
         }
 
@@ -163,6 +172,20 @@ public class PlayerController : MonoBehaviour
                 boxCollider.isTrigger = true;
                 //Audio
                 gameAudio.Play("Broom");
+                //Visual
+                switch(broomUse)
+                {
+                    case 3:
+                        broomComponent.HideLeft();
+                        break;
+                    case 2:
+                        broomComponent.HideRight();
+                        break;
+                    case 1:
+                        broomComponent = null;
+                        Destroy(broomInstance);
+                        break;
+                }
             }
         }
     }
