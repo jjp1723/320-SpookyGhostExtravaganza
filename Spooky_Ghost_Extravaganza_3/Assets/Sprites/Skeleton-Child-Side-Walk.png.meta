@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 8add1c70dcd32a741bd43cb7ff322f20
+guid: d508f1627b79bee409bcb38dd469d400
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5211581263008097027
-    second: Ghost-Right_0
+      213: 3272592244707077115
+    second: Skeleton-Child-Side-Walk_0
   - first:
-      213: -5036206831387144383
-    second: Ghost-Right_1
+      213: -5972641232275636660
+    second: Skeleton-Child-Side-Walk_1
   - first:
-      213: 6383835953258206474
-    second: Ghost-Right_2
+      213: -7854137553640827141
+    second: Skeleton-Child-Side-Walk_2
   - first:
-      213: -7652793311102884820
-    second: Ghost-Right_3
+      213: -393064725743285166
+    second: Skeleton-Child-Side-Walk_3
   - first:
-      213: -3739391654859322741
-    second: Ghost-Right_4
+      213: -2991846071102389517
+    second: Skeleton-Child-Side-Walk_4
+  - first:
+      213: -1622006658007675315
+    second: Skeleton-Child-Side-Walk_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,106 +121,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ghost-Right_0
+      name: Skeleton-Child-Side-Walk_0
       rect:
         serializedVersion: 2
         x: 6
-        y: 65
+        y: 66
         width: 20
-        height: 31
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 303edabeb81435840800000000000000
-      internalID: 5211581263008097027
+      spriteID: bfba670ce459a6d20800000000000000
+      internalID: 3272592244707077115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_1
+      name: Skeleton-Child-Side-Walk_1
       rect:
         serializedVersion: 2
         x: 38
-        y: 65
+        y: 66
         width: 20
-        height: 31
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f06cfd19ccb1ab0800000000000000
-      internalID: -5036206831387144383
+      spriteID: c4efb53917aec1da0800000000000000
+      internalID: -5972641232275636660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_2
+      name: Skeleton-Child-Side-Walk_2
       rect:
         serializedVersion: 2
         x: 6
-        y: 33
+        y: 34
         width: 20
-        height: 31
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a05925af9f0f79850800000000000000
-      internalID: 6383835953258206474
+      spriteID: bf6de2a028f700390800000000000000
+      internalID: -7854137553640827141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_3
+      name: Skeleton-Child-Side-Walk_3
       rect:
         serializedVersion: 2
         x: 38
-        y: 33
+        y: 34
         width: 20
-        height: 31
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c242a30a701dbc590800000000000000
-      internalID: -7652793311102884820
+      spriteID: 25cc558e6bd8b8af0800000000000000
+      internalID: -393064725743285166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_4
+      name: Skeleton-Child-Side-Walk_4
       rect:
         serializedVersion: 2
         x: 6
-        y: 1
+        y: 2
         width: 20
-        height: 31
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8acc002a130b1cc0800000000000000
-      internalID: -3739391654859322741
+      spriteID: 3f24b4d89d3da76d0800000000000000
+      internalID: -2991846071102389517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton-Child-Side-Walk_5
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4e422ec9897d79e0800000000000000
+      internalID: -1622006658007675315
       vertices: []
       indices: 
       edges: []

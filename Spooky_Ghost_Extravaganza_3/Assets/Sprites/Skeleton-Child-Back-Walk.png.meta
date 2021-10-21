@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: 8add1c70dcd32a741bd43cb7ff322f20
+guid: 5e2fe3c1588fed24d8e0503723be935b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5211581263008097027
-    second: Ghost-Right_0
+      213: 7976751972586964085
+    second: Skeleton-Child-Back-Walk_0
   - first:
-      213: -5036206831387144383
-    second: Ghost-Right_1
+      213: 8212116145066587621
+    second: Skeleton-Child-Back-Walk_1
   - first:
-      213: 6383835953258206474
-    second: Ghost-Right_2
+      213: 7306308941510713171
+    second: Skeleton-Child-Back-Walk_2
   - first:
-      213: -7652793311102884820
-    second: Ghost-Right_3
+      213: -7586519909756918142
+    second: Skeleton-Child-Back-Walk_3
   - first:
-      213: -3739391654859322741
-    second: Ghost-Right_4
+      213: 1294699955269950817
+    second: Skeleton-Child-Back-Walk_4
+  - first:
+      213: 6248198419948473519
+    second: Skeleton-Child-Back-Walk_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,7 +121,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ghost-Right_0
+      name: Skeleton-Child-Back-Walk_0
       rect:
         serializedVersion: 2
         x: 6
@@ -126,20 +129,20 @@ TextureImporter:
         width: 20
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 303edabeb81435840800000000000000
-      internalID: 5211581263008097027
+      spriteID: 574417b08ad13be60800000000000000
+      internalID: 7976751972586964085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_1
+      name: Skeleton-Child-Back-Walk_1
       rect:
         serializedVersion: 2
         x: 38
@@ -147,20 +150,20 @@ TextureImporter:
         width: 20
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14f06cfd19ccb1ab0800000000000000
-      internalID: -5036206831387144383
+      spriteID: 5e5b1f0df1c47f170800000000000000
+      internalID: 8212116145066587621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_2
+      name: Skeleton-Child-Back-Walk_2
       rect:
         serializedVersion: 2
         x: 6
@@ -168,20 +171,20 @@ TextureImporter:
         width: 20
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a05925af9f0f79850800000000000000
-      internalID: 6383835953258206474
+      spriteID: 35f91069549356560800000000000000
+      internalID: 7306308941510713171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_3
+      name: Skeleton-Child-Back-Walk_3
       rect:
         serializedVersion: 2
         x: 38
@@ -189,20 +192,20 @@ TextureImporter:
         width: 20
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c242a30a701dbc590800000000000000
-      internalID: -7652793311102884820
+      spriteID: 286a281565447b690800000000000000
+      internalID: -7586519909756918142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ghost-Right_4
+      name: Skeleton-Child-Back-Walk_4
       rect:
         serializedVersion: 2
         x: 6
@@ -210,14 +213,35 @@ TextureImporter:
         width: 20
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8acc002a130b1cc0800000000000000
-      internalID: -3739391654859322741
+      spriteID: 16d549cefb2b7f110800000000000000
+      internalID: 1294699955269950817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton-Child-Back-Walk_5
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fac8f2bcb5f06b650800000000000000
+      internalID: 6248198419948473519
       vertices: []
       indices: 
       edges: []
