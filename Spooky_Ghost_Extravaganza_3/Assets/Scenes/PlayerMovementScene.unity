@@ -585,7 +585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcd42e3664ec5f4fb429cdf752408d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1757603381}
+  player1: {fileID: 0}
+  player2: {fileID: 0}
   powerup: {fileID: 1060067611}
   npc: {fileID: 2157201625206322811, guid: f2a2923476d624041b04db2aaecf624a, type: 3}
 --- !u!4 &936344139
@@ -1320,6 +1321,7 @@ MonoBehaviour:
   scareRadius: 5
   scareEffect: {fileID: 8825391213821587257, guid: 4dfe3906e452bb24e8a661dae05e5412, type: 3}
   broomPrefab: {fileID: 6235325817092321800, guid: d1669efdf0ca7e54f8cbe1173f2de199, type: 3}
+  isPlayer1: 0
 --- !u!212 &1757603383
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1402,7 +1404,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.24}
+    oldSize: {x: 0.625, y: 0.96875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
