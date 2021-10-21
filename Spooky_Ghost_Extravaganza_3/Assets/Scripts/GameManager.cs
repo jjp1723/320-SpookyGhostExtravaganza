@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject player2;
+    private PlayerController playerController2;
 
     [SerializeField]
     private GameObject powerup;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerController1 = player1.GetComponent<PlayerController>();
+        playerController2 = player2.GetComponent<PlayerController>();
         powerupController = powerup.GetComponent<PowerupController>();
 
         //create 3 npcs
@@ -38,7 +40,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerController1.CheckForMovementInput();
+        playerController1.CheckForInput();
+        playerController2.CheckForInput();
 
         powerupController.CheckForInput();
 
@@ -49,7 +52,5 @@ public class GameManager : MonoBehaviour
                 npcControllers[i].Move();
             }
         }
-
-        playerController1.CheckForScareInput(npcs);
     }
 }

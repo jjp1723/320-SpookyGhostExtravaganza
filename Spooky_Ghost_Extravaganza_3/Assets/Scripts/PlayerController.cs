@@ -41,7 +41,13 @@ public class PlayerController : MonoBehaviour
         boxCollider = player.GetComponent<BoxCollider2D>();
     }
 
-    public void CheckForMovementInput()
+    public void CheckForInput()
+    {
+        CheckForMovementInput();
+        CheckForScareInput();
+    }
+
+    private void CheckForMovementInput()
     {
         bool keyPressed = false;
         Vector2 velocityVec = new Vector2(0.0f, 0.0f);
@@ -113,7 +119,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void CheckForScareInput(List<GameObject> npcs)
+    private void CheckForScareInput()
     {
         if (isPlayer1)
         {
