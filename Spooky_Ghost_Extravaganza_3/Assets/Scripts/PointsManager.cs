@@ -7,6 +7,7 @@ public class PointsManager : MonoBehaviour
 {
     private GameObject pointsManager;
     private Text p1ScoreText;
+    private Text p2ScoreText;
 
     //Stores all of the players scores
     private Dictionary<string, int> playerScores;
@@ -17,6 +18,7 @@ public class PointsManager : MonoBehaviour
         pointsManager = gameObject;
         playerScores = new Dictionary<string, int>();
         p1ScoreText = GameObject.Find("ScoreTextP1").GetComponent<Text>();
+        p2ScoreText = GameObject.Find("ScoreTextP2").GetComponent<Text>();
     }
 
     public void AddPointsToPlayer(string playerID, int pointsToAdd)
@@ -30,7 +32,14 @@ public class PointsManager : MonoBehaviour
             playerScores.Add(playerID, pointsToAdd);
         }
 
-        p1ScoreText.text = "Score: " + playerScores[playerID];
+        if (playerID == "Player1")
+        {
+            p1ScoreText.text = "Score: " + playerScores[playerID];
+        }
+        if (playerID == "Player2")
+        {
+            p2ScoreText.text = "Score: " + playerScores[playerID];
+        }
     }
 
 }
