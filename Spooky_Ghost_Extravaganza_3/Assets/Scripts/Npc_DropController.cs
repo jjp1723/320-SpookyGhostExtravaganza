@@ -22,7 +22,7 @@ public class Npc_DropController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             //Audio
             FindObjectOfType<AudioManager>().Play("Pickup1");

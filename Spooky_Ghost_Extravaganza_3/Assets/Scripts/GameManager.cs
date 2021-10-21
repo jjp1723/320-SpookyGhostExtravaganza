@@ -5,8 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player;
-    private PlayerController playerController;
+    private GameObject player1;
+    private PlayerController playerController1;
+
+    [SerializeField]
+    private GameObject player2;
 
     [SerializeField]
     private GameObject powerup;
@@ -21,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        playerController = player.GetComponent<PlayerController>();
+        playerController1 = player1.GetComponent<PlayerController>();
         powerupController = powerup.GetComponent<PowerupController>();
 
         //create 3 npcs
@@ -35,7 +38,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerController.CheckForMovementInput();
+        playerController1.CheckForMovementInput();
 
         powerupController.CheckForInput();
 
@@ -47,6 +50,6 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        playerController.CheckForScareInput(npcs);
+        playerController1.CheckForScareInput(npcs);
     }
 }

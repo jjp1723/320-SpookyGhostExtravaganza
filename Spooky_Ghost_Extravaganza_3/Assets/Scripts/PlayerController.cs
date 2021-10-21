@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     GameObject broomInstance;
     Broomstick broomComponent;
 
+    [SerializeField]
+    private bool isPlayer1;
+
     private AudioManager gameAudio;
 
     //cooldown
@@ -43,25 +46,51 @@ public class PlayerController : MonoBehaviour
         bool keyPressed = false;
         Vector2 velocityVec = new Vector2(0.0f, 0.0f);
 
-        if (Input.GetKey(KeyCode.W))
+        if (isPlayer1)
         {
-            velocityVec.y  += moveSpeed;
-            keyPressed = true;
+            if (Input.GetKey(KeyCode.W))
+            {
+                velocityVec.y += moveSpeed;
+                keyPressed = true;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                velocityVec.y -= moveSpeed;
+                keyPressed = true;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                velocityVec.x -= moveSpeed;
+                keyPressed = true;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                velocityVec.x += moveSpeed;
+                keyPressed = true;
+            }
         }
-        if (Input.GetKey(KeyCode.S))
+        else
         {
-            velocityVec.y -= moveSpeed;
-            keyPressed = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            velocityVec.x -= moveSpeed;
-            keyPressed = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            velocityVec.x += moveSpeed;
-            keyPressed = true;
+            if (Input.GetKey(KeyCode.W))
+            {
+                velocityVec.y += moveSpeed;
+                keyPressed = true;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                velocityVec.y -= moveSpeed;
+                keyPressed = true;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                velocityVec.x -= moveSpeed;
+                keyPressed = true;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                velocityVec.x += moveSpeed;
+                keyPressed = true;
+            }
         }
 
         if(!keyPressed)
@@ -70,17 +99,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //if (velocityVec.x != 0 && velocityVec.y != 0)
-            //{
-            //    if (rb.velocity.y != 0.0f)
-            //    {
-            //        velocityVec.x = 0.0f;
-            //    }
-            //    else
-            //    {
-            //        velocityVec.y = 0.0f;
-            //    }
-            //}
             MovePlayer(velocityVec);
         }
 
@@ -97,35 +115,36 @@ public class PlayerController : MonoBehaviour
 
     public void CheckForScareInput(List<GameObject> npcs)
     {
-        if (Input.GetKeyDown(KeyCode.F) && scaredTimer <= 0.0f)
+        if (isPlayer1)
         {
-            scaredTimer = 2.0f;
+            if (Input.GetKeyDown(KeyCode.F) && scaredTimer <= 0.0f)
+            {
+                scaredTimer = 2.0f;
 
-            //set radius to be scareRadius
-            scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
+                //set radius to be scareRadius
+                scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
 
-            circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
-            //for (int i = 0; i < npcs.Count; i++)
-            //{
-            //    float distSquared = Mathf.Pow(npcs[i].transform.position.x - player.transform.position.x, 2) + Mathf.Pow(npcs[i].transform.position.y - player.transform.position.y, 2);
+                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
 
-            //    //Squaring the radius to avoid a square root
-            //    if (Mathf.Pow(scareRadius, 2) > distSquared)
-            //    {
-            //        npcs[i].GetComponent<NpcController>().UpdateScared(true);
-            //    }
-            //}
-
-            //Audio "BOO!"
-            gameAudio.Play("Ghost");
+                //Audio "BOO!"
+                gameAudio.Play("Ghost");
+            }
         }
-        //else
-        //{
-        //    for (int i = 0; i < npcs.Count; i++)
-        //    {
-        //        npcs[i].GetComponent<NpcController>().UpdateScared(false);
-        //    }
-        //}
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.RightShift) && scaredTimer <= 0.0f)
+            {
+                scaredTimer = 2.0f;
+
+                //set radius to be scareRadius
+                scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
+
+                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
+
+                //Audio "BOO!"
+                gameAudio.Play("Ghost");
+            }
+        }
     }
 
     public void StopPlayer()
