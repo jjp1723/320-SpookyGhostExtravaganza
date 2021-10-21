@@ -26,7 +26,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerController1 = player1.GetComponent<PlayerController>();
-        playerController2 = player2.GetComponent<PlayerController>();
+        if (player2)
+        {
+            playerController2 = player2.GetComponent<PlayerController>();
+        }
+
         powerupController = powerup.GetComponent<PowerupController>();
 
         //create 3 npcs
@@ -41,8 +45,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         playerController1.CheckForInput();
-        playerController2.CheckForInput();
-
+        if (playerController2)
+        {
+            playerController2.CheckForInput();
+        }
         powerupController.CheckForInput();
 
         for (int i = 0; i < npcs.Count; i++)

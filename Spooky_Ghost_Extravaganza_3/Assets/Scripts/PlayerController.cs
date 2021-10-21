@@ -77,22 +77,22 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 velocityVec.y += moveSpeed;
                 keyPressed = true;
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 velocityVec.y -= moveSpeed;
                 keyPressed = true;
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 velocityVec.x -= moveSpeed;
                 keyPressed = true;
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 velocityVec.x += moveSpeed;
                 keyPressed = true;
