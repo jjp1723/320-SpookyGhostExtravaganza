@@ -10,6 +10,6 @@ public class MainMenuController : MonoBehaviour
    
     public void PlayGame()
     {
-        SceneManager.LoadScene("TwoPlayerScene");
+        SceneManager.LoadScene("PlayerMovementScene");
     }
 }
