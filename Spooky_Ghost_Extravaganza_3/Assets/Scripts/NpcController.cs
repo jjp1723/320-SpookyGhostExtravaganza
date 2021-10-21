@@ -63,7 +63,7 @@ public class NpcController : MonoBehaviour
             }
             else
             {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
         }
     }
