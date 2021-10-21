@@ -14,12 +14,20 @@ public class NpcController : MonoBehaviour
 
     private float scaredTimer = 2.0f;
 
+    //Demon-Child sprites
+    private Sprite demon;
+    private Sprite demonScream;
+
     void Start()
     {
         transform.position = new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
 
         //set moveDir to random direction
         moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+
+        //Loading the sprites
+        demon = Resources.Load<Sprite>("Demon-Child-Front_0");
+        demonScream = Resources.Load<Sprite>("Demon-Child-Scream");
     }
 
     public void Move()
@@ -59,11 +67,14 @@ public class NpcController : MonoBehaviour
             if (isScared)
             {
                 scaredTimer = 2.0f;
+                gameObject.GetComponent<SpriteRenderer>().sprite = demonScream;
+                //gameObject.GetComponent<Animator>().enabled = false;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
             {
-                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                gameObject.GetComponent<SpriteRenderer>().sprite = demon;
+                gameObject.GetComponent<Animator>().enabled = true;
             }
         }
     }
