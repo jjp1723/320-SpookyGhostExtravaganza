@@ -3557,16 +3557,20 @@ PrefabInstance:
       value: Skateboard
       objectReference: {fileID: 0}
     - target: {fileID: 7071851626936424477, guid: 6296ce88c8ffdd8448f5440e4d22db4e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 31d00debd72b63d49aeec442b20f782c, type: 3}
+    - target: {fileID: 7071851626936424477, guid: 6296ce88c8ffdd8448f5440e4d22db4e, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7071851626936424477, guid: 6296ce88c8ffdd8448f5440e4d22db4e, type: 3}
       propertyPath: m_Color.g
-      value: 0.013665199
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7071851626936424477, guid: 6296ce88c8ffdd8448f5440e4d22db4e, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6296ce88c8ffdd8448f5440e4d22db4e, type: 3}
