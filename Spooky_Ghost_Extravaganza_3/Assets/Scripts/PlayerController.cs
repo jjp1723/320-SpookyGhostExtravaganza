@@ -139,10 +139,10 @@ public class PlayerController : MonoBehaviour
         {
             scareRadiusTimer -= Time.deltaTime;
         }
-        else
-        {
-            scareRadius = defualtScareRadius;
-        }
+        //else
+        //{
+        //    scareRadius = defualtScareRadius;
+        //}
     }
 
     private void CheckForScareInput()
