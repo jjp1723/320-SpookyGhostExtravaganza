@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private GameObject player;
-    [SerializeField]
-    private float moveSpeed = 1.0f;
-    [SerializeField]
-    private float scareRadius = 5.0f;
+
+    private float moveSpeed;
+    private float scareRadius;
     private Rigidbody2D rb;
 
     private BoxCollider2D boxCollider;
@@ -30,9 +29,19 @@ public class PlayerController : MonoBehaviour
     //cooldown
     private float scaredTimer = 0.0f;
     private float scareCooldown = 2.0f;
+    private float powerupCooldown = 30.0f;
 
     //powerup variables
     private int broomUse = 0;
+    [SerializeField]
+    private float defualtScareRadius = 4.0f;
+    private float upgradedScareRadius;
+    private float scareRadiusTimer = 0.0f;
+
+    [SerializeField]
+    private float defaultMoveSpeed = 3.0f;
+    private float upgradedMoveSpeed;
+    private float moveSpeedTimer = 0.0f;
 
     void Start()
     {
@@ -40,6 +49,12 @@ public class PlayerController : MonoBehaviour
         player = gameObject;
         rb = player.GetComponent<Rigidbody2D>();
         boxCollider = player.GetComponent<BoxCollider2D>();
+
+        moveSpeed = defaultMoveSpeed;
+        upgradedMoveSpeed = defaultMoveSpeed * 2;
+        scareRadius = defualtScareRadius;
+        upgradedScareRadius = defualtScareRadius * 2;
+
     }
 
     public void CheckForInput()
@@ -118,6 +133,16 @@ public class PlayerController : MonoBehaviour
             }
             scaredTimer -= Time.deltaTime;
         }
+
+        //update scare radius powerup
+        if (scareRadiusTimer >= 0.0f)
+        {
+            scareRadiusTimer -= Time.deltaTime;
+        }
+        else
+        {
+            scareRadius = defualtScareRadius;
+        }
     }
 
     private void CheckForScareInput()
@@ -141,7 +166,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.RightShift) && scaredTimer <= 0.0f)
             {
-                scaredTimer = 2.0f;
+                scaredTimer = scareCooldown;
 
                 //set radius to be scareRadius
                 scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
@@ -177,7 +202,8 @@ public class PlayerController : MonoBehaviour
             //increase scare radius
             if (powerup.type == "Megaphone")
             {
-                scareRadius = 10.0f;
+                scareRadius = upgradedScareRadius;
+                scareRadiusTimer = powerupCooldown;
             }
 
             if (powerup.type == "Broom")

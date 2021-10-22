@@ -2623,11 +2623,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f0582755daec946aff804622534972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  scareRadius: 5
   scareEffect: {fileID: 8825391213821587257, guid: 4dfe3906e452bb24e8a661dae05e5412, type: 3}
   broomPrefab: {fileID: 6235325817092321800, guid: d1669efdf0ca7e54f8cbe1173f2de199, type: 3}
   isPlayer1: 0
+  defualtScareRadius: 4
+  defaultMoveSpeed: 4
 --- !u!212 &1610790837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3269,11 +3269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f0582755daec946aff804622534972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  scareRadius: 5
   scareEffect: {fileID: 8825391213821587257, guid: 4dfe3906e452bb24e8a661dae05e5412, type: 3}
   broomPrefab: {fileID: 6235325817092321800, guid: d1669efdf0ca7e54f8cbe1173f2de199, type: 3}
   isPlayer1: 1
+  defualtScareRadius: 4
+  defaultMoveSpeed: 4
 --- !u!212 &2006110050
 SpriteRenderer:
   m_ObjectHideFlags: 0
