@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
         //update scare timer
         if (scaredTimer >= 0.0f)
         {
-            if (scaredTimer <= (scareCooldown - 0.25f) && circle != null)
+            if (scaredTimer <= (scareCooldown - 0.5f) && circle != null)
             {
                 Destroy(circle);
             }
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
                 //set radius to be scareRadius
                 scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
 
-                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
+                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
 
                 //Audio "BOO!"
                 gameAudio.Play("Ghost");
@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
                 //set radius to be scareRadius
                 scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
 
-                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
+                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
 
                 //Audio "BOO!"
                 gameAudio.Play("Ghost");
@@ -215,6 +215,7 @@ public class PlayerController : MonoBehaviour
                 broomComponent = broomInstance.GetComponent<Broomstick>();
             }
         }
+
 
         if(collision.gameObject.tag == "Obstacle")
         {
