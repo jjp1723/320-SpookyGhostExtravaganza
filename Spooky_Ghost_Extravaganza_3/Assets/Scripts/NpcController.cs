@@ -74,6 +74,7 @@ public class NpcController : MonoBehaviour
             else
             {
                 gameObject.GetComponent<SpriteRenderer>().sprite = demon;
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 gameObject.GetComponent<Animator>().enabled = true;
             }
         }

@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     //cooldown
     private float scaredTimer = 0.0f;
+    private float scareCooldown = 2.0f;
 
     //powerup variables
     private int broomUse = 0;
@@ -111,7 +112,7 @@ public class PlayerController : MonoBehaviour
         //update scare timer
         if (scaredTimer >= 0.0f)
         {
-            if (scaredTimer <= 1.25f && circle != null)
+            if (scaredTimer <= (scareCooldown - 0.25f) && circle != null)
             {
                 Destroy(circle);
             }
@@ -125,12 +126,12 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.F) && scaredTimer <= 0.0f)
             {
-                scaredTimer = 2.0f;
+                scaredTimer = scareCooldown;
 
                 //set radius to be scareRadius
                 scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
 
-                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
+                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
 
                 //Audio "BOO!"
                 gameAudio.Play("Ghost");
@@ -145,7 +146,7 @@ public class PlayerController : MonoBehaviour
                 //set radius to be scareRadius
                 scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
 
-                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
+                circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity);
 
                 //Audio "BOO!"
                 gameAudio.Play("Ghost");

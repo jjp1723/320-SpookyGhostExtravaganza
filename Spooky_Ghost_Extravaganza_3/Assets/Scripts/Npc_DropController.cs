@@ -8,6 +8,7 @@ public class Npc_DropController : MonoBehaviour
     private AudioManager gameAudio;
 
     private GameObject pointsManager;
+    private PointsManager pointsManagerScript;
     private const int candyPointsVal = 100;
 
     public string type;
@@ -18,6 +19,7 @@ public class Npc_DropController : MonoBehaviour
         gameAudio = FindObjectOfType<AudioManager>();
         npcDrop = gameObject;
         pointsManager = GameObject.Find("PointsManager");
+        pointsManagerScript = pointsManager.GetComponent<PointsManager>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -27,7 +29,7 @@ public class Npc_DropController : MonoBehaviour
             //Audio
             FindObjectOfType<AudioManager>().Play("Pickup1");
 
-            pointsManager.GetComponent<PointsManager>().AddPointsToPlayer(collision.gameObject.name, candyPointsVal);
+            pointsManagerScript.AddPointsToPlayer(collision.gameObject.name, candyPointsVal);
 
             //gameAudio.Play("Pickup1");
             Destroy(npcDrop);
