@@ -199,21 +199,41 @@ public class PlayerController : MonoBehaviour
         PowerupController powerup = collision.gameObject.GetComponent<PowerupController>();
         if (powerup)
         {
-            //increase scare radius
-            if (powerup.type == "Megaphone")
+            switch (powerup.type)
             {
-                scareRadius = upgradedScareRadius;
-                scareRadiusTimer = powerupCooldown;
-            }
+                case "Megaphone":
+                    scareRadius = upgradedScareRadius;
+                    scareRadiusTimer = powerupCooldown;
+                    break;
+                case "Broom":
+                    broomUse = 3;
+                    broomInstance = Object.Instantiate(broomPrefab, player.transform.position, Quaternion.identity, transform);
+                    broomInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 40.31f);
+                    broomInstance.transform.position += new Vector3(0.07f, -0.3f, 0.0f);
+                    broomComponent = broomInstance.GetComponent<Broomstick>();
+                    break;
+                case "Skateboard":
+                    moveSpeed = upgradedMoveSpeed;
+                    moveSpeedTimer = powerupCooldown;
+                    break;
 
-            if (powerup.type == "Broom")
-            {
-                broomUse = 3;
-                broomInstance = Object.Instantiate(broomPrefab, player.transform.position, Quaternion.identity, transform);
-                broomInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 40.31f);
-                broomInstance.transform.position += new Vector3(0.07f, -0.3f, 0.0f);
-                broomComponent = broomInstance.GetComponent<Broomstick>();
             }
+            //increase scare radius
+            //if (powerup.type == "Megaphone")
+            //{
+            //    scareRadius = upgradedScareRadius;
+            //    scareRadiusTimer = powerupCooldown;
+            //}
+
+            //if (powerup.type == "Broom")
+            //{
+            //    broomUse = 3;
+            //    broomInstance = Object.Instantiate(broomPrefab, player.transform.position, Quaternion.identity, transform);
+            //    broomInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 40.31f);
+            //    broomInstance.transform.position += new Vector3(0.07f, -0.3f, 0.0f);
+            //    broomComponent = broomInstance.GetComponent<Broomstick>();
+            //}
+
         }
 
 
