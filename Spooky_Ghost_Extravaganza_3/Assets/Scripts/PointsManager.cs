@@ -16,6 +16,7 @@ public class PointsManager : MonoBehaviour
     void Start()
     {
         pointsManager = gameObject;
+        DontDestroyOnLoad(pointsManager);
         playerScores = new Dictionary<string, int>();
         p1ScoreText = GameObject.Find("ScoreTextP1").GetComponent<Text>();
         p2ScoreText = GameObject.Find("ScoreTextP2").GetComponent<Text>();
@@ -40,6 +41,16 @@ public class PointsManager : MonoBehaviour
         {
             p2ScoreText.text = "Score: " + playerScores[playerID];
         }
+    }
+
+    public int GetScore(string playerID)
+    {
+        if (playerScores.ContainsKey(playerID))
+        {
+            return playerScores[playerID];
+        }
+
+        return 0;
     }
 
 }

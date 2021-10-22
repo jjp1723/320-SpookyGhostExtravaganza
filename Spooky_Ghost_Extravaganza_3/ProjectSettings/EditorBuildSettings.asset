@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TwoPlayerScene.unity
     guid: 93f4574db506fa744bd848d5633d469d
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: ba145b60f104a39459aab1b6b451faf4
   m_configObjects: {}
