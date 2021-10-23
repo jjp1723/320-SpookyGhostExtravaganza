@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     Broomstick broomComponent;
 
     [SerializeField]
+    private GameObject skateboardPrefab;
+    GameObject skateboardInstance;
+
+    [SerializeField]
     private bool isPlayer1;
 
     private AudioManager gameAudio;
@@ -215,6 +219,10 @@ public class PlayerController : MonoBehaviour
                 case "Skateboard":
                     moveSpeed = upgradedMoveSpeed;
                     moveSpeedTimer = powerupCooldown;
+                    skateboardInstance = Object.Instantiate(skateboardPrefab, player.transform.position, Quaternion.identity, transform);
+                    skateboardInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 40.31f);
+                    skateboardInstance.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                    skateboardInstance.transform.position += new Vector3(0.07f, -0.5f, 0.0f);
                     break;
 
             }

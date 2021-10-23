@@ -2625,6 +2625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scareEffect: {fileID: 8825391213821587257, guid: 4dfe3906e452bb24e8a661dae05e5412, type: 3}
   broomPrefab: {fileID: 6235325817092321800, guid: d1669efdf0ca7e54f8cbe1173f2de199, type: 3}
+  skateboardPrefab: {fileID: 0}
   isPlayer1: 0
   defualtScareRadius: 4
   defaultMoveSpeed: 4
@@ -3271,6 +3272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scareEffect: {fileID: 8825391213821587257, guid: 4dfe3906e452bb24e8a661dae05e5412, type: 3}
   broomPrefab: {fileID: 6235325817092321800, guid: d1669efdf0ca7e54f8cbe1173f2de199, type: 3}
+  skateboardPrefab: {fileID: 7580565246040559465, guid: bb6f4248270bd294b8b2b629cee6fd55, type: 3}
   isPlayer1: 1
   defualtScareRadius: 4
   defaultMoveSpeed: 4
