@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
     private float upgradedMoveSpeed;
     private float moveSpeedTimer = 0.0f;
 
+    public bool hasCascade = false;
+    private float cascadeTimer = 0.0f;
+
     void Start()
     {
         gameAudio = FindObjectOfType<AudioManager>();
@@ -146,6 +149,27 @@ public class PlayerController : MonoBehaviour
         //else
         //{
         //    scareRadius = defualtScareRadius;
+        //    scaredTimer = 0.0f;
+        //}
+
+        if (moveSpeedTimer >= 0.0f)
+        {
+            moveSpeedTimer -= Time.deltaTime;
+        }
+        //else
+        //{
+        //    moveSpeed = defaultMoveSpeed;
+        //    moveSpeedTimer = 0.0f;
+        //}
+
+        if (cascadeTimer >= 0.0f)
+        {
+            cascadeTimer -= Time.deltaTime;
+        }
+        //else
+        //{
+        //    hasCascade = false;
+        //    cascadeTimer = 0.0f;
         //}
     }
 
@@ -225,24 +249,12 @@ public class PlayerController : MonoBehaviour
                     skateboardInstance.transform.localScale = new Vector3(0.5f, 0.5f, 1);
                     skateboardInstance.transform.position += new Vector3(0.07f, -0.5f, 0.0f);
                     break;
+                case "Cascade":
+                    hasCascade = true;
+                    cascadeTimer = powerupCooldown;
+                    break;
 
             }
-            //increase scare radius
-            //if (powerup.type == "Megaphone")
-            //{
-            //    scareRadius = upgradedScareRadius;
-            //    scareRadiusTimer = powerupCooldown;
-            //}
-
-            //if (powerup.type == "Broom")
-            //{
-            //    broomUse = 3;
-            //    broomInstance = Object.Instantiate(broomPrefab, player.transform.position, Quaternion.identity, transform);
-            //    broomInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 40.31f);
-            //    broomInstance.transform.position += new Vector3(0.07f, -0.3f, 0.0f);
-            //    broomComponent = broomInstance.GetComponent<Broomstick>();
-            //}
-
         }
 
 

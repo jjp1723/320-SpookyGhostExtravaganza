@@ -18,6 +18,9 @@ public class NpcController : MonoBehaviour
     private Sprite demon;
     private Sprite demonScream;
 
+    //for cascade scare
+    private GameObject circle;
+
     void Start()
     {
         transform.position = new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
@@ -76,14 +79,20 @@ public class NpcController : MonoBehaviour
                 gameObject.GetComponent<SpriteRenderer>().sprite = demon;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 gameObject.GetComponent<Animator>().enabled = true;
+                
+                //if no longer scared destroy scare cirlce
+                if (circle != null)
+                {
+                    Destroy(circle);
+                }
             }
         }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.name == "ScareCircle(Clone)")
+        GameObject obj = collision.gameObject;
+        if (obj.name == "ScareCircle(Clone)" || obj.name == "ScareCircle(Clone)(Clone)")
         {
             if (!isScared)
             {
@@ -92,6 +101,14 @@ public class NpcController : MonoBehaviour
 
                 float randNum = Random.Range(0.0f, 1.0f);
                 drop.GetComponent<Rigidbody2D>().velocity = 3 * new Vector3(randNum, 1.0f - randNum);
+
+                PlayerController script = obj.transform.parent.gameObject.GetComponent<PlayerController>();
+
+                if (script && script.hasCascade)
+                {
+                    circle = Object.Instantiate(obj.gameObject, this.transform.position, Quaternion.identity, transform);
+                    circle.transform.localScale = new Vector3(3f, 3f, 0);
+                }
             }
 
             Debug.Log("Scared");
