@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private GameObject scareEffect;
-    Object circle;
+    GameObject circle;
 
     [SerializeField]
     private GameObject broomPrefab;
@@ -161,6 +161,7 @@ public class PlayerController : MonoBehaviour
                 scareEffect.transform.localScale = new Vector3(scareRadius, scareRadius, 0);
 
                 circle = Object.Instantiate(scareEffect, player.transform.position, Quaternion.identity, transform);
+                circle.GetComponent<SpriteRenderer>().sortingOrder = 1000;
 
                 //Audio "BOO!"
                 gameAudio.Play("Ghost");

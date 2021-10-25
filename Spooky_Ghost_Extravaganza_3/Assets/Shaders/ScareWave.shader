@@ -7,11 +7,15 @@ Shader "Unlit/ScareWave"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags {
+            "RenderType"="Opaque"
+            "Queue"="Transparent"
+        }
         //LOD 100
 
         Pass
         {
+            ZWrite Off
             Blend one one //additive
 
             CGPROGRAM
