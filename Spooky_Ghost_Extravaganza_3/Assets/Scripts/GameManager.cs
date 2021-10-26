@@ -25,7 +25,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private float npcSpawnIncrement;
-    private float spawnTimer = 0.0f;
+    private float npcSpawnTimer = 0.0f;
+
+    [SerializeField]
+    private float powerupSpawnIncrement;
+    private float powerupSpawnTimer = 0.0f;
+    [SerializeField]
+    private List<string> powerupTypes = new List<string>();
 
     void Start()
     {
@@ -55,13 +61,13 @@ public class GameManager : MonoBehaviour
         }
         powerupController.CheckForInput();
 
-        if(spawnTimer < npcSpawnIncrement)
+        if(npcSpawnTimer < npcSpawnIncrement)
         {
-            spawnTimer += Time.deltaTime;
+            npcSpawnTimer += Time.deltaTime;
         }
         else
         {
-            spawnTimer = 0.0f;
+            npcSpawnTimer = 0.0f;
             npcs.Add(Object.Instantiate(npc));
             npcControllers.Add(npcs[npcs.Count - 1].GetComponent<NpcController>());
         }
