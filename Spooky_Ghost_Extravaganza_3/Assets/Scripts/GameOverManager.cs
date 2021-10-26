@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -40,5 +41,15 @@ public class GameOverManager : MonoBehaviour
 
         gameAudio.Stop("Gameloop");
         gameAudio.Play("Ending");
+    }
+
+    public void PlayAgain()
+    {
+        SceneManager.LoadScene("PlayerMovementScene");
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenuScene");
     }
 }
