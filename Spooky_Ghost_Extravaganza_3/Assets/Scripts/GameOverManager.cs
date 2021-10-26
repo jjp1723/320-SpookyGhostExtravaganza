@@ -8,12 +8,14 @@ public class GameOverManager : MonoBehaviour
     private Text p1ScoreText;
     private Text p2ScoreText;
     private Text titleText;
+    private AudioManager gameAudio;
 
     void Start()
     {
         p1ScoreText = GameObject.Find("P1Score").GetComponent<Text>();
         p2ScoreText = GameObject.Find("P2Score").GetComponent<Text>();
         titleText = GameObject.Find("TitleText").GetComponent<Text>();
+        gameAudio = FindObjectOfType<AudioManager>();
 
         PointsManager pm = GameObject.Find("PointsManager").GetComponent<PointsManager>();
 
@@ -35,5 +37,8 @@ public class GameOverManager : MonoBehaviour
         {
             titleText.text = "Player 2 Wins!!!";
         }
+
+        gameAudio.Stop("Gameloop");
+        gameAudio.Play("Ending");
     }
 }
