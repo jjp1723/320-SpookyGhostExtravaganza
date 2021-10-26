@@ -17,8 +17,16 @@ public class GameManager : MonoBehaviour
     private PowerupController powerupController;
 
     [SerializeField]
-    private GameObject npc;
+    private GameObject npcDemon;
+
+    [SerializeField]
+    private GameObject npcSkeleton;
+
+    [SerializeField]
+    private GameObject npcWitch;
     private NpcController npcController;
+
+    private int npcType;
 
     private List<GameObject> npcs = new List<GameObject>();
     private List<NpcController> npcControllers = new List<NpcController>();
@@ -46,7 +54,25 @@ public class GameManager : MonoBehaviour
         //create 3 npcs
         for (int i = 0; i < 3; i++)
         {
-            npcs.Add(Object.Instantiate(npc));
+            npcType = Random.Range(1, 4);
+            switch (npcType)
+            {
+                case 1:
+                    npcs.Add(Object.Instantiate(npcDemon));
+                    break;
+
+                case 2:
+                    npcs.Add(Object.Instantiate(npcSkeleton));
+                    break;
+
+                case 3:
+                    npcs.Add(Object.Instantiate(npcWitch));
+                    break;
+
+                default:
+                    npcs.Add(Object.Instantiate(npcDemon));
+                    break;
+            }
             npcControllers.Add(npcs[i].GetComponent<NpcController>());
         }
     }
@@ -68,7 +94,24 @@ public class GameManager : MonoBehaviour
         else
         {
             npcSpawnTimer = 0.0f;
-            npcs.Add(Object.Instantiate(npc));
+            switch (npcType)
+            {
+                case 1:
+                    npcs.Add(Object.Instantiate(npcDemon));
+                    break;
+
+                case 2:
+                    npcs.Add(Object.Instantiate(npcSkeleton));
+                    break;
+
+                case 3:
+                    npcs.Add(Object.Instantiate(npcWitch));
+                    break;
+
+                default:
+                    npcs.Add(Object.Instantiate(npcDemon));
+                    break;
+            }
             npcControllers.Add(npcs[npcs.Count - 1].GetComponent<NpcController>());
         }
 
