@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
     public bool hasCascade = false;
     private float cascadeTimer = 0.0f;
 
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         gameAudio = FindObjectOfType<AudioManager>();
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         scareRadius = defualtScareRadius;
         upgradedScareRadius = defualtScareRadius * 2;
 
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
     }
 
     public void CheckForInput()
@@ -134,12 +137,16 @@ public class PlayerController : MonoBehaviour
         //update scare timer
         if (scaredTimer >= 0.0f)
         {
+            //Cooldown
+            spriteRenderer.color = Color.gray;
             if (scaredTimer <= (scareCooldown - 0.5f) && circle != null)
             {
                 Destroy(circle);
             }
             scaredTimer -= Time.deltaTime;
         }
+        else
+            spriteRenderer.color = Color.white;
 
         //update scare radius powerup
         if (scareRadiusTimer >= 0.0f)
