@@ -8,6 +8,7 @@ public class NpcController : MonoBehaviour
     private GameObject npcDrop;
 
     private Vector2 moveDir;
+    private float moveSpeed = 2.0f;
 
     private bool isScared = false;
     public bool IsScared { get => isScared; set => UpdateScared(value); }
@@ -36,7 +37,7 @@ public class NpcController : MonoBehaviour
     public void Move()
     {
         Vector3 pos = transform.position;
-        transform.position += (Vector3)moveDir * Time.deltaTime;
+        transform.position += (Vector3)moveDir * Time.deltaTime * moveSpeed;
         if (pos.x > 5f && moveDir.x > 0)
         {
             moveDir.x *= -1;
@@ -70,12 +71,15 @@ public class NpcController : MonoBehaviour
             if (isScared)
             {
                 scaredTimer = 2.0f;
+                moveSpeed = 7.0f;
                 gameObject.GetComponent<SpriteRenderer>().sprite = demonScream;
                 //gameObject.GetComponent<Animator>().enabled = false;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
             {
+                moveSpeed = 1.0f;
+
                 gameObject.GetComponent<SpriteRenderer>().sprite = demon;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 gameObject.GetComponent<Animator>().enabled = true;

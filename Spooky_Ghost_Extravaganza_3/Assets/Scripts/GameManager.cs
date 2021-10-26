@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     private List<GameObject> npcs = new List<GameObject>();
     private List<NpcController> npcControllers = new List<NpcController>();
 
+    [SerializeField]
+    private float npcSpawnIncrement;
+
     void Start()
     {
         playerController1 = player1.GetComponent<PlayerController>();

@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             scareRadius = defualtScareRadius;
-            scaredTimer = 0.0f;
+            scareRadiusTimer = 0.0f;
         }
 
         if (moveSpeedTimer >= 0.0f)
