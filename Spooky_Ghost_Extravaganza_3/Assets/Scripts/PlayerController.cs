@@ -160,6 +160,7 @@ public class PlayerController : MonoBehaviour
         {
             moveSpeed = defaultMoveSpeed;
             moveSpeedTimer = 0.0f;
+            Destroy(skateboardInstance);
         }
 
         if (cascadeTimer >= 0.0f)
