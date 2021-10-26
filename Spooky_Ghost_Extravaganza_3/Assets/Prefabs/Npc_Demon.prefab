@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6379424975008230363}
   - component: {fileID: 7785881083235787013}
   m_Layer: 0
-  m_Name: Npc
+  m_Name: Npc_Demon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
