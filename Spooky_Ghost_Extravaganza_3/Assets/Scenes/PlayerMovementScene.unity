@@ -6157,6 +6157,13 @@ MonoBehaviour:
   player2: {fileID: 1610790832}
   powerup: {fileID: 1060067611}
   npc: {fileID: 2157201625206322811, guid: f2a2923476d624041b04db2aaecf624a, type: 3}
+  npcSpawnIncrement: 40
+  powerupSpawnIncrement: 15
+  powerupTypes:
+  - Skateboard
+  - Megaphone
+  - Broom
+  - Cascade
 --- !u!4 &936344139
 Transform:
   m_ObjectHideFlags: 0

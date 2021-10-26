@@ -8,6 +8,7 @@ public class NpcController : MonoBehaviour
     private GameObject npcDrop;
 
     private Vector2 moveDir;
+    private float moveSpeed = 2.0f;
 
     private bool isScared = false;
     public bool IsScared { get => isScared; set => UpdateScared(value); }
@@ -17,6 +18,11 @@ public class NpcController : MonoBehaviour
     //Demon-Child sprites
     private Sprite demon;
     private Sprite demonScream;
+
+    [SerializeField]
+    private float[] xBounds = { -10.0f, 10.0f };
+    [SerializeField]
+    private float[] yBounds = { -10.0f, 10.0f };
 
     //for cascade scare
     private GameObject circle;
@@ -36,22 +42,26 @@ public class NpcController : MonoBehaviour
     public void Move()
     {
         Vector3 pos = transform.position;
-        transform.position += (Vector3)moveDir * Time.deltaTime;
-        if (pos.x > 5f && moveDir.x > 0)
+        transform.position += (Vector3)moveDir * Time.deltaTime * moveSpeed;
+        if (pos.x > xBounds[1] && moveDir.x > 0)
         {
             moveDir.x *= -1;
+            moveDir.y = Random.Range(-1f, 1f);
         }
-        if (pos.x < -5f && moveDir.x < 0)
+        if (pos.x < xBounds[0] && moveDir.x < 0)
         {
             moveDir.x *= -1;
+            moveDir.y = Random.Range(-1f, 1f);
         }
-        if (pos.y > 5f && moveDir.y > 0)
+        if (pos.y > yBounds[1] && moveDir.y > 0)
         {
             moveDir.y *= -1;
+            moveDir.x = Random.Range(-1f, 1f);
         }
-        if (pos.y < -5f && moveDir.y < 0)
+        if (pos.y < yBounds[0] && moveDir.y < 0)
         {
             moveDir.y *= -1;
+            moveDir.x = Random.Range(-1f, 1f);
         }
 
         UpdateScared(false);
@@ -70,12 +80,15 @@ public class NpcController : MonoBehaviour
             if (isScared)
             {
                 scaredTimer = 2.0f;
+                moveSpeed = 7.0f;
                 gameObject.GetComponent<SpriteRenderer>().sprite = demonScream;
                 //gameObject.GetComponent<Animator>().enabled = false;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
             {
+                moveSpeed = 1.0f;
+
                 gameObject.GetComponent<SpriteRenderer>().sprite = demon;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 gameObject.GetComponent<Animator>().enabled = true;
