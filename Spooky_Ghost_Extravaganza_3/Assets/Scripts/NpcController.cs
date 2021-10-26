@@ -29,7 +29,7 @@ public class NpcController : MonoBehaviour
 
     void Start()
     {
-        transform.position = new Vector2(Random.Range(-5f, 5f), Random.Range(-5f, 5f));
+        transform.position = new Vector2(Random.Range(xBounds[0], xBounds[1]), Random.Range(yBounds[0], yBounds[1]));
 
         //set moveDir to random direction
         moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));

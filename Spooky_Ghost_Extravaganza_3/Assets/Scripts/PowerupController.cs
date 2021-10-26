@@ -18,6 +18,8 @@ public class PowerupController : MonoBehaviour
         gameAudio = FindObjectOfType<AudioManager>();
         powerup = gameObject;
         pointsManager = GameObject.Find("PointsManager");
+
+        transform.position = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
     }
 
     public void CheckForInput()
