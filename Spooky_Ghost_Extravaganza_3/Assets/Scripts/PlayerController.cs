@@ -146,31 +146,31 @@ public class PlayerController : MonoBehaviour
         {
             scareRadiusTimer -= Time.deltaTime;
         }
-        //else
-        //{
-        //    scareRadius = defualtScareRadius;
-        //    scaredTimer = 0.0f;
-        //}
+        else
+        {
+            scareRadius = defualtScareRadius;
+            scaredTimer = 0.0f;
+        }
 
         if (moveSpeedTimer >= 0.0f)
         {
             moveSpeedTimer -= Time.deltaTime;
         }
-        //else
-        //{
-        //    moveSpeed = defaultMoveSpeed;
-        //    moveSpeedTimer = 0.0f;
-        //}
+        else
+        {
+            moveSpeed = defaultMoveSpeed;
+            moveSpeedTimer = 0.0f;
+        }
 
         if (cascadeTimer >= 0.0f)
         {
             cascadeTimer -= Time.deltaTime;
         }
-        //else
-        //{
-        //    hasCascade = false;
-        //    cascadeTimer = 0.0f;
-        //}
+        else
+        {
+            hasCascade = false;
+            cascadeTimer = 0.0f;
+        }
     }
 
     private void CheckForScareInput()
