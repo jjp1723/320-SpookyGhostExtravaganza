@@ -72,6 +72,18 @@ public class GameManager : MonoBehaviour
             npcControllers.Add(npcs[npcs.Count - 1].GetComponent<NpcController>());
         }
 
+        //if (powerupSpawnTimer < powerupSpawnIncrement)
+        //{
+        //    powerupSpawnTimer += Time.deltaTime;
+        //}
+        //else
+        //{
+        //    powerupSpawnTimer = 0.0f;
+        //    PowerupController temp = powerupController;
+        //    temp.type = powerupTypes[Random.Range(0, powerupTypes.Count - 1)];
+        //    Object.Instantiate(temp);
+        //}
+
         for (int i = 0; i < npcs.Count; i++)
         {
             if (npcControllers[i])
