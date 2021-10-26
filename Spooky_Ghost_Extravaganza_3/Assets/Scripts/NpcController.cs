@@ -46,18 +46,22 @@ public class NpcController : MonoBehaviour
         if (pos.x > xBounds[1] && moveDir.x > 0)
         {
             moveDir.x *= -1;
+            moveDir.y = Random.Range(-1f, 1f);
         }
         if (pos.x < xBounds[0] && moveDir.x < 0)
         {
             moveDir.x *= -1;
+            moveDir.y = Random.Range(-1f, 1f);
         }
         if (pos.y > yBounds[1] && moveDir.y > 0)
         {
             moveDir.y *= -1;
+            moveDir.x = Random.Range(-1f, 1f);
         }
         if (pos.y < yBounds[0] && moveDir.y < 0)
         {
             moveDir.y *= -1;
+            moveDir.x = Random.Range(-1f, 1f);
         }
 
         UpdateScared(false);
