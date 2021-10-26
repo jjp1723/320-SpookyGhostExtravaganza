@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     private float powerupSpawnIncrement;
     private float powerupSpawnTimer = 0.0f;
     [SerializeField]
-    private List<string> powerupTypes = new List<string>();
+    private List<GameObject> powerupTypes = new List<GameObject>();
 
     void Start()
     {
@@ -115,17 +115,16 @@ public class GameManager : MonoBehaviour
             npcControllers.Add(npcs[npcs.Count - 1].GetComponent<NpcController>());
         }
 
-        //if (powerupSpawnTimer < powerupSpawnIncrement)
-        //{
-        //    powerupSpawnTimer += Time.deltaTime;
-        //}
-        //else
-        //{
-        //    powerupSpawnTimer = 0.0f;
-        //    PowerupController temp = powerupController;
-        //    temp.type = powerupTypes[Random.Range(0, powerupTypes.Count - 1)];
-        //    Object.Instantiate(temp);
-        //}
+        if (powerupSpawnTimer < powerupSpawnIncrement)
+        {
+            powerupSpawnTimer += Time.deltaTime;
+        }
+        else
+        {
+            powerupSpawnTimer = 0.0f;
+            GameObject temp = Object.Instantiate(powerupTypes[Random.Range(0, powerupTypes.Count - 1)]);
+            temp.transform.position = new Vector2(Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+        }
 
         for (int i = 0; i < npcs.Count; i++)
         {
