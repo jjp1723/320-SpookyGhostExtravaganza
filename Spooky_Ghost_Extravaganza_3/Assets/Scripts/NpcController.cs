@@ -19,6 +19,11 @@ public class NpcController : MonoBehaviour
     private Sprite demon;
     private Sprite demonScream;
 
+    [SerializeField]
+    private float[] xBounds = { -10.0f, 10.0f };
+    [SerializeField]
+    private float[] yBounds = { -10.0f, 10.0f };
+
     //for cascade scare
     private GameObject circle;
 
@@ -38,19 +43,19 @@ public class NpcController : MonoBehaviour
     {
         Vector3 pos = transform.position;
         transform.position += (Vector3)moveDir * Time.deltaTime * moveSpeed;
-        if (pos.x > 5f && moveDir.x > 0)
+        if (pos.x > xBounds[1] && moveDir.x > 0)
         {
             moveDir.x *= -1;
         }
-        if (pos.x < -5f && moveDir.x < 0)
+        if (pos.x < xBounds[0] && moveDir.x < 0)
         {
             moveDir.x *= -1;
         }
-        if (pos.y > 5f && moveDir.y > 0)
+        if (pos.y > yBounds[1] && moveDir.y > 0)
         {
             moveDir.y *= -1;
         }
-        if (pos.y < -5f && moveDir.y < 0)
+        if (pos.y < yBounds[0] && moveDir.y < 0)
         {
             moveDir.y *= -1;
         }
