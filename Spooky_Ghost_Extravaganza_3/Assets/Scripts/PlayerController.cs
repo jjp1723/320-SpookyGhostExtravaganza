@@ -26,8 +26,12 @@ public class PlayerController : MonoBehaviour
     GameObject skateboardInstance;
 
     [SerializeField]
-    private GameObject cascadePrefab;
-    GameObject cascadeInstance;
+    private GameObject cascadeSpritePrefab;
+    GameObject cascadeSpriteInstance;
+
+    [SerializeField]
+    private GameObject megaphoneSpritePrefab;
+    GameObject megaphoneSpriteInstance;
 
     [SerializeField]
     private bool isPlayer1;
@@ -161,6 +165,7 @@ public class PlayerController : MonoBehaviour
         {
             scareRadius = defualtScareRadius;
             scareRadiusTimer = 0.0f;
+            Destroy(megaphoneSpriteInstance);
         }
 
         if (moveSpeedTimer >= 0.0f)
@@ -182,7 +187,7 @@ public class PlayerController : MonoBehaviour
         {
             hasCascade = false;
             cascadeTimer = 0.0f;
-            Destroy(cascadeInstance);
+            Destroy(cascadeSpriteInstance);
         }
     }
 
@@ -246,6 +251,10 @@ public class PlayerController : MonoBehaviour
                 case "Megaphone":
                     scareRadius = upgradedScareRadius;
                     scareRadiusTimer = powerupCooldown;
+                    megaphoneSpriteInstance = Object.Instantiate(megaphoneSpritePrefab, player.transform.position, Quaternion.identity, transform);
+                    megaphoneSpriteInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    megaphoneSpriteInstance.transform.localScale = new Vector3(0.5f, 0.5f, 1);
+                    megaphoneSpriteInstance.transform.position += new Vector3(0.5f, 0.1f, 0.0f);
                     break;
                 case "Broom":
                     broomUse = 3;
@@ -265,10 +274,10 @@ public class PlayerController : MonoBehaviour
                 case "Cascade":
                     hasCascade = true;
                     cascadeTimer = powerupCooldown;
-                    cascadeInstance = Object.Instantiate(cascadePrefab, player.transform.position, Quaternion.identity, transform);
-                    cascadeInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                    cascadeInstance.transform.localScale = new Vector3(0.75f, 0.75f, 1);
-                    cascadeInstance.transform.position += new Vector3(0.0f, 0.6f, 0.0f);
+                    cascadeSpriteInstance = Object.Instantiate(cascadeSpritePrefab, player.transform.position, Quaternion.identity, transform);
+                    cascadeSpriteInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    cascadeSpriteInstance.transform.localScale = new Vector3(0.75f, 0.75f, 1);
+                    cascadeSpriteInstance.transform.position += new Vector3(0.0f, 0.6f, 0.0f);
                     break;
 
             }
