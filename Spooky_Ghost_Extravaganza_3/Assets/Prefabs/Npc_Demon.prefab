@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 476374149851658181}
   - component: {fileID: 6639100047870615990}
   - component: {fileID: 6379424975008230363}
-  - component: {fileID: 7785881083235787013}
+  - component: {fileID: 9031254181705305079}
   m_Layer: 0
   m_Name: Npc_Demon
   m_TagString: Untagged
@@ -130,7 +130,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!95 &7785881083235787013
+--- !u!95 &9031254181705305079
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

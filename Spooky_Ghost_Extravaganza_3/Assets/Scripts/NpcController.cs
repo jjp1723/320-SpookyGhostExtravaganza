@@ -15,10 +15,6 @@ public class NpcController : MonoBehaviour
 
     private float scaredTimer = 2.0f;
 
-    //Demon-Child sprites
-    private Sprite demon;
-    private Sprite demonScream;
-
     [SerializeField]
     private float[] xBounds = { -10.0f, 10.0f };
     [SerializeField]
@@ -31,14 +27,8 @@ public class NpcController : MonoBehaviour
     {
         transform.position = new Vector2(Random.Range(xBounds[0], xBounds[1]), Random.Range(yBounds[0], yBounds[1]));
 
-        float theta = Random.Range(0, Mathf.PI * 2);
-
         //set moveDir to random direction
-        moveDir = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta));
-
-        //Loading the sprites
-        demon = Resources.Load<Sprite>("Demon-Child-Front_0");
-        demonScream = Resources.Load<Sprite>("Demon-Child-Scream");
+        moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
     }
 
     public void Move()
@@ -48,22 +38,22 @@ public class NpcController : MonoBehaviour
         if (pos.x > xBounds[1] && moveDir.x > 0)
         {
             moveDir.x *= -1;
-            moveDir.y = Mathf.Sin(Random.Range(Mathf.PI / 2, 3 * Mathf.PI / 2));
+            moveDir.y = Random.Range(-1f, 1f);
         }
         if (pos.x < xBounds[0] && moveDir.x < 0)
         {
             moveDir.x *= -1;
-            moveDir.y = Mathf.Sin(Random.Range(-Mathf.PI / 2, Mathf.PI / 2));
+            moveDir.y = Random.Range(-1f, 1f);
         }
         if (pos.y > yBounds[1] && moveDir.y > 0)
         {
             moveDir.y *= -1;
-            moveDir.x = Mathf.Cos(Random.Range(Mathf.PI, 2 * Mathf.PI));
+            moveDir.x = Random.Range(-1f, 1f);
         }
         if (pos.y < yBounds[0] && moveDir.y < 0)
         {
             moveDir.y *= -1;
-            moveDir.x = Mathf.Cos(Random.Range(0, Mathf.PI));
+            moveDir.x = Random.Range(-1f, 1f);
         }
 
         UpdateScared(false);
@@ -83,17 +73,12 @@ public class NpcController : MonoBehaviour
             {
                 scaredTimer = 2.0f;
                 moveSpeed = 7.0f;
-                //gameObject.GetComponent<Animator>().enabled = false;
-                gameObject.GetComponent<SpriteRenderer>().sprite = demonScream;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
             {
                 moveSpeed = 1.0f;
-
-                gameObject.GetComponent<SpriteRenderer>().sprite = demon;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                //gameObject.GetComponent<Animator>().enabled = true;
                 
                 //if no longer scared destroy scare cirlce
                 if (circle != null)
@@ -115,7 +100,7 @@ public class NpcController : MonoBehaviour
                 drop.transform.position = transform.position;
 
                 float randNum = Random.Range(0.0f, 1.0f);
-                drop.GetComponent<Rigidbody2D>().velocity = 10 * new Vector3(randNum, 1.0f - randNum);
+                drop.GetComponent<Rigidbody2D>().velocity = 3 * new Vector3(randNum, 1.0f - randNum);
 
                 PlayerController script = obj.transform.parent.gameObject.GetComponent<PlayerController>();
 
