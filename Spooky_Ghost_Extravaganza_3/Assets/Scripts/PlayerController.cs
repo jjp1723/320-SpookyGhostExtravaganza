@@ -26,6 +26,10 @@ public class PlayerController : MonoBehaviour
     GameObject skateboardInstance;
 
     [SerializeField]
+    private GameObject cascadePrefab;
+    GameObject cascadeInstance;
+
+    [SerializeField]
     private bool isPlayer1;
 
     private AudioManager gameAudio;
@@ -178,6 +182,7 @@ public class PlayerController : MonoBehaviour
         {
             hasCascade = false;
             cascadeTimer = 0.0f;
+            Destroy(cascadeInstance);
         }
     }
 
@@ -260,6 +265,10 @@ public class PlayerController : MonoBehaviour
                 case "Cascade":
                     hasCascade = true;
                     cascadeTimer = powerupCooldown;
+                    cascadeInstance = Object.Instantiate(cascadePrefab, player.transform.position, Quaternion.identity, transform);
+                    cascadeInstance.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    cascadeInstance.transform.localScale = new Vector3(0.75f, 0.75f, 1);
+                    cascadeInstance.transform.position += new Vector3(0.0f, 0.6f, 0.0f);
                     break;
 
             }
