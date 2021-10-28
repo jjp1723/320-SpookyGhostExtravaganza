@@ -115,7 +115,7 @@ public class NpcController : MonoBehaviour
                 drop.transform.position = transform.position;
 
                 float randNum = Random.Range(0.0f, 1.0f);
-                drop.GetComponent<Rigidbody2D>().velocity = 3 * new Vector3(randNum, 1.0f - randNum);
+                drop.GetComponent<Rigidbody2D>().velocity = 10 * new Vector3(randNum, 1.0f - randNum);
 
                 PlayerController script = obj.transform.parent.gameObject.GetComponent<PlayerController>();
 
