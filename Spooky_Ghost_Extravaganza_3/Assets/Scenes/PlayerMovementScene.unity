@@ -1418,7 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09ef289fdd8deba48abe8a497389e919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxGameTimeSecs: 300
+  maxGameTimeSecs: 150
 --- !u!114 &522762047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7136,7 +7136,7 @@ MonoBehaviour:
   npcDemon: {fileID: 2157201625206322811, guid: f2a2923476d624041b04db2aaecf624a, type: 3}
   npcSkeleton: {fileID: 7293952327358145149, guid: cc640c3b57d0a3a4c86bdd57d4557fa7, type: 3}
   npcWitch: {fileID: 6727110186618504784, guid: 5e72df7f27ea37f449816ff685026d2d, type: 3}
-  npcSpawnIncrement: 40
+  npcSpawnIncrement: 20
   powerupSpawnIncrement: 15
   powerupTypes:
   - {fileID: 3436009941451757423, guid: 80c418bf355d7e04093e517c3be4c3ba, type: 3}
