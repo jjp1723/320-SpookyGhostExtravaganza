@@ -59,18 +59,22 @@ public class GameManager : MonoBehaviour
             {
                 case 1:
                     npcs.Add(Object.Instantiate(npcDemon));
+                    Debug.Log("Demon Created");
                     break;
 
                 case 2:
                     npcs.Add(Object.Instantiate(npcSkeleton));
+                    Debug.Log("Skeleton Created");
                     break;
 
                 case 3:
                     npcs.Add(Object.Instantiate(npcWitch));
+                    Debug.Log("Witch Created");
                     break;
 
                 default:
                     npcs.Add(Object.Instantiate(npcDemon));
+                    Debug.Log("Demon Created");
                     break;
             }
             npcControllers.Add(npcs[i].GetComponent<NpcController>());

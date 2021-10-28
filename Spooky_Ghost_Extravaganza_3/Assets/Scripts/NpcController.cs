@@ -15,10 +15,6 @@ public class NpcController : MonoBehaviour
 
     private float scaredTimer = 2.0f;
 
-    //Demon-Child sprites
-    private Sprite demon;
-    private Sprite demonScream;
-
     [SerializeField]
     private float[] xBounds = { -10.0f, 10.0f };
     [SerializeField]
@@ -33,10 +29,6 @@ public class NpcController : MonoBehaviour
 
         //set moveDir to random direction
         moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-
-        //Loading the sprites
-        demon = Resources.Load<Sprite>("Demon-Child-Front_0");
-        demonScream = Resources.Load<Sprite>("Demon-Child-Scream");
     }
 
     public void Move()
@@ -81,17 +73,12 @@ public class NpcController : MonoBehaviour
             {
                 scaredTimer = 2.0f;
                 moveSpeed = 7.0f;
-                //gameObject.GetComponent<Animator>().enabled = false;
-                gameObject.GetComponent<SpriteRenderer>().sprite = demonScream;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
             {
                 moveSpeed = 1.0f;
-
-                gameObject.GetComponent<SpriteRenderer>().sprite = demon;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                //gameObject.GetComponent<Animator>().enabled = true;
                 
                 //if no longer scared destroy scare cirlce
                 if (circle != null)
