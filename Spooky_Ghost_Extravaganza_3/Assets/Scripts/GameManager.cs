@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> powerupTypes = new List<GameObject>();
 
+    [SerializeField]
+    private int numStartNpcs;
+
     void Start()
     {
         playerController1 = player1.GetComponent<PlayerController>();
@@ -52,7 +55,7 @@ public class GameManager : MonoBehaviour
         powerupController = powerup.GetComponent<PowerupController>();
 
         //create 3 npcs
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < numStartNpcs; i++)
         {
             npcType = Random.Range(1, 4);
             switch (npcType)
