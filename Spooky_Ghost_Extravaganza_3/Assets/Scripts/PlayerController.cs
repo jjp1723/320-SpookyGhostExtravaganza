@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     GameObject cascadeInstance;
 
     [SerializeField]
-    private bool isPlayer1;
+    public bool isPlayer1;
 
     private AudioManager gameAudio;
 
