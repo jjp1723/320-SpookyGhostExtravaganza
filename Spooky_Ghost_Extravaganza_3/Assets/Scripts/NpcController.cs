@@ -31,8 +31,10 @@ public class NpcController : MonoBehaviour
     {
         transform.position = new Vector2(Random.Range(xBounds[0], xBounds[1]), Random.Range(yBounds[0], yBounds[1]));
 
+        float theta = Random.Range(0, Mathf.PI * 2);
+
         //set moveDir to random direction
-        moveDir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        moveDir = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta));
 
         //Loading the sprites
         demon = Resources.Load<Sprite>("Demon-Child-Front_0");
@@ -46,22 +48,22 @@ public class NpcController : MonoBehaviour
         if (pos.x > xBounds[1] && moveDir.x > 0)
         {
             moveDir.x *= -1;
-            moveDir.y = Random.Range(-1f, 1f);
+            moveDir.y = Mathf.Sin(Random.Range(Mathf.PI / 2, 3 * Mathf.PI / 2));
         }
         if (pos.x < xBounds[0] && moveDir.x < 0)
         {
             moveDir.x *= -1;
-            moveDir.y = Random.Range(-1f, 1f);
+            moveDir.y = Mathf.Sin(Random.Range(-Mathf.PI / 2, Mathf.PI / 2));
         }
         if (pos.y > yBounds[1] && moveDir.y > 0)
         {
             moveDir.y *= -1;
-            moveDir.x = Random.Range(-1f, 1f);
+            moveDir.x = Mathf.Cos(Random.Range(Mathf.PI, 2 * Mathf.PI));
         }
         if (pos.y < yBounds[0] && moveDir.y < 0)
         {
             moveDir.y *= -1;
-            moveDir.x = Random.Range(-1f, 1f);
+            moveDir.x = Mathf.Cos(Random.Range(0, Mathf.PI));
         }
 
         UpdateScared(false);
