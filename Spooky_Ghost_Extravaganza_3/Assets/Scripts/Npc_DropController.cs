@@ -24,10 +24,15 @@ public class Npc_DropController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        GameObject obj = collision.gameObject;
         if (collision.gameObject.tag == "Player")
         {
+            PlayerController script = obj.gameObject.GetComponent<PlayerController>();
             //Audio
-            FindObjectOfType<AudioManager>().Play("Pickup1");
+            if (script && script.isPlayer1)
+                FindObjectOfType<AudioManager>().Play("Pickup1");
+            else
+                FindObjectOfType<AudioManager>().Play("Pickup2");
 
             pointsManagerScript.AddPointsToPlayer(collision.gameObject.name, candyPointsVal);
 

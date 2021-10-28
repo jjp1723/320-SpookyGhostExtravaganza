@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     GameObject megaphoneSpriteInstance;
 
     [SerializeField]
-    private bool isPlayer1;
+    public bool isPlayer1;
 
     private AudioManager gameAudio;
 

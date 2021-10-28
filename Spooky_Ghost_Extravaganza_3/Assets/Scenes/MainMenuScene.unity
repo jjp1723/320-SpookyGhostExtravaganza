@@ -456,6 +456,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Pickup2
+    clip: {fileID: 8300000, guid: 745f43eaf23ef014fa632231801b451b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &202332644
 Transform:
   m_ObjectHideFlags: 0
