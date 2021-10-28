@@ -81,8 +81,8 @@ public class NpcController : MonoBehaviour
             {
                 scaredTimer = 2.0f;
                 moveSpeed = 7.0f;
-                gameObject.GetComponent<SpriteRenderer>().sprite = demonScream;
                 //gameObject.GetComponent<Animator>().enabled = false;
+                gameObject.GetComponent<SpriteRenderer>().sprite = demonScream;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
             else
@@ -91,7 +91,7 @@ public class NpcController : MonoBehaviour
 
                 gameObject.GetComponent<SpriteRenderer>().sprite = demon;
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                gameObject.GetComponent<Animator>().enabled = true;
+                //gameObject.GetComponent<Animator>().enabled = true;
                 
                 //if no longer scared destroy scare cirlce
                 if (circle != null)
