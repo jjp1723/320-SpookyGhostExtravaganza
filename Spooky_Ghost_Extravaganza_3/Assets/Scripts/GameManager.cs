@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     private GameObject npcWitch;
     private NpcController npcController;
 
+    [SerializeField]
+    private GameObject pointsManager;
+
     private int npcType;
 
     private List<GameObject> npcs = new List<GameObject>();
@@ -50,6 +53,8 @@ public class GameManager : MonoBehaviour
         }
 
         powerupController = powerup.GetComponent<PowerupController>();
+
+        pointsManager.GetComponent<PointsManager>().RestartPointsManager();
 
         //create 3 npcs
         for (int i = 0; i < 3; i++)

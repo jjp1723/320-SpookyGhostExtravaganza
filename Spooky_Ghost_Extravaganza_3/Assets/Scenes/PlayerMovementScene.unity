@@ -7302,6 +7302,7 @@ MonoBehaviour:
   npcDemon: {fileID: 2157201625206322811, guid: f2a2923476d624041b04db2aaecf624a, type: 3}
   npcSkeleton: {fileID: 7293952327358145149, guid: cc640c3b57d0a3a4c86bdd57d4557fa7, type: 3}
   npcWitch: {fileID: 6727110186618504784, guid: 5e72df7f27ea37f449816ff685026d2d, type: 3}
+  pointsManager: {fileID: 1865191573}
   npcSpawnIncrement: 40
   powerupSpawnIncrement: 15
   powerupTypes:

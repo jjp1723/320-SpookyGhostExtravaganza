@@ -22,6 +22,13 @@ public class PointsManager : MonoBehaviour
         p2ScoreText = GameObject.Find("ScoreTextP2").GetComponent<Text>();
     }
 
+    public void RestartPointsManager()
+    {
+        playerScores = new Dictionary<string, int>();
+        p1ScoreText = GameObject.Find("ScoreTextP1").GetComponent<Text>();
+        p2ScoreText = GameObject.Find("ScoreTextP2").GetComponent<Text>();
+    }
+
     public void AddPointsToPlayer(string playerID, int pointsToAdd)
     {
         if (playerScores.ContainsKey(playerID))

@@ -10,6 +10,7 @@ public class GameOverManager : MonoBehaviour
     private Text p2ScoreText;
     private Text titleText;
     private AudioManager gameAudio;
+    private GameObject pmObj;
 
     void Start()
     {
@@ -18,7 +19,8 @@ public class GameOverManager : MonoBehaviour
         titleText = GameObject.Find("TitleText").GetComponent<Text>();
         gameAudio = FindObjectOfType<AudioManager>();
 
-        PointsManager pm = GameObject.Find("PointsManager").GetComponent<PointsManager>();
+        pmObj = GameObject.Find("PointsManager");
+        PointsManager pm = pmObj.GetComponent<PointsManager>();
 
         int p1Score = pm.GetScore("Player1");
         int p2Score = pm.GetScore("Player2");
@@ -45,11 +47,16 @@ public class GameOverManager : MonoBehaviour
 
     public void PlayAgain()
     {
+        Destroy(pmObj);
+        gameAudio.Stop("Ending");
+        gameAudio.Play("Gameloop");
         SceneManager.LoadScene("PlayerMovementScene");
     }
 
     public void ReturnToMenu()
     {
+        gameAudio.Stop("Ending");
+        gameAudio.Play("TitleIntro");
         SceneManager.LoadScene("MainMenuScene");
     }
 }
