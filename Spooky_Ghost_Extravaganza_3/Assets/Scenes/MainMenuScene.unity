@@ -1012,7 +1012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 966, y: -447.4}
+  m_AnchoredPosition: {x: 950, y: -360}
   m_SizeDelta: {x: 911.2803, y: 302.8053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &633786455
@@ -1611,7 +1611,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 20, y: -69}
-  m_SizeDelta: {x: 1452.4668, y: 558.3478}
+  m_SizeDelta: {x: 1400, y: 558.3478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292248271
 MonoBehaviour:
@@ -1635,7 +1635,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1646,11 +1646,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You and your spooky ghost compatriot have made a bet to see who can collect
+  m_Text: 'You and your spooky ghost compatriot have made a bet to see who can collect
     the most candy. Your goal is to run around the neighborhood scaring as many children
     as you can, collecting all of the candy they drop before this Halloween night
     is over! Powerups will appear throughout the map that will aid you in your quest
     to attain more candy!
+
+    Skateboard - faster, Megaphone - bigger scare, Hat
+    - scared children scare others. Broom - move through tombstones'
 --- !u!222 &1292248272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2224,7 +2227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 455.64026, y: 1.4026}
+  m_AnchoredPosition: {x: 380, y: 1.4026}
   m_SizeDelta: {x: 911.2803, y: 302.8053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1793774598
